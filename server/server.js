@@ -8,7 +8,7 @@ const PORT = 3737;
 // Middleware
 app.use(cors());
 
-app.get('/', (req, res) => {
+app.get('/v1', (req, res) => {
   res.send('Hi Profit Prof');
 });
 
