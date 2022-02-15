@@ -1,4 +1,7 @@
-import './App.css';
+import "./reset.scss"
+import "./variables.scss"
+import "./app.scss";
+import "./media.scss"
 
 function App() {
   return (

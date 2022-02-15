@@ -1,0 +1,46 @@
+/*#region Variables*/
+$darkcolor: rgb(38, 38, 38);
+$lightcolor: rgb(223, 244, 225);
+$lavender1: #544c64;
+$lavender2: #68607c;
+$lavender3: #84749c;
+$lavender4: #b3bdd6;
+$cyan1: #64bbce;
+$cyan2: #86c1ce;
+$cyan3: #42bec8;
+$green1: #87d6a2;
+$green2: #8be6b6;
+$pink1: #e7afdc;
+/*#region mixins*/
+
+
+/*#endregion mixins*/
+@mixin light-on-dark {
+  color: $lightcolor;
+  background-color: $darkcolor;
+}
+
+@mixin dark-on-light {
+  color: $darkcolor;
+  background-color: $lightcolor;
+}
+
+@mixin combo1 {
+    background-color: darkgoldenrod;
+    background-image: linear-gradient(45deg, $lavender1, $pink1);
+    background-clip: text;
+    /* background-size: 100%; */
+    /* background-repeat: repeat; */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+
+@mixin gradient1 {
+    background-image: linear-gradient(green,blue)
+
+}
+
+
+/*#endregion Variables*/
