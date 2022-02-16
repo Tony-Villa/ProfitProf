@@ -6,6 +6,7 @@ import './media.scss';
 import AuthForm from './components/auth/AuthForm/AuthForm';
 import { UserContext } from './Context/UserContext';
 import { useEffect, useMemo, useState } from 'react';
+import AppRoutes from './routes/config/Routes';
 
 function App() {
   const [isUser, setIsUser] = useState(false);
@@ -49,29 +50,18 @@ function App() {
     }
   };
 
-  const logout = (e) => {
-    e.preventDefault();
-    localStorage.removeItem('token');
-    setAuth(false);
-  };
-
   useEffect(() => {
     isAuth();
   });
 
   useEffect(() => {
     getUser();
-    console.log(user?.username);
-    console.log(isUser);
   }, [isUser]);
 
   return (
     <div className="App">
       <UserContext.Provider value={value}>
-        <h1>Hello, Profit Prof</h1>
-        {user?.username && <h3>hello {user.first_name}</h3>}
-        {isUser && <button onClick={(e) => logout(e)}>Log Out</button>}
-        <AuthForm setAuth={setAuth} />
+        <AppRoutes setAuth={setAuth} isUser={isUser} />
       </UserContext.Provider>
     </div>
   );

@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router';
+import { UserContext } from '../../../Context/UserContext';
 
 const Login = ({ setAuth }) => {
+  const navigate = useNavigate();
+  const { user } = useContext(UserContext);
+
   const [inputs, setInputs] = useState({
     username: '',
     password: '',
@@ -27,6 +32,7 @@ const Login = ({ setAuth }) => {
       if (parsedRes.token) {
         localStorage.setItem('token', parsedRes.token);
         setAuth(true);
+        navigate(`/dashboard`);
         // toast.success('Login Successful!', { theme: 'dark' });
       } else {
         setAuth(false);

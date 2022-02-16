@@ -9,3 +9,11 @@ CREATE TABLE users(
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+CREATE TYPE category AS ENUM ('fixed', 'non-fixed');
+
+CREATE TABLE expenses (
+id PRIMARY KEY DEFAULT uuid_generate_v4(),
+user_id uuid REFERENCES users (id) ON DELETE CASCADE,
+expense_type category,
+)
