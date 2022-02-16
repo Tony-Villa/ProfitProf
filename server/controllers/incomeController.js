@@ -12,6 +12,18 @@ require('dotenv').config();
 //   }
 // };
 
+const showIncome = async (req, res) => {
+  //   try {
+  // const income = await pool.query('SELECT * FROM income WHERE user_id = $1', [req.params.user_id]);
+  res.send('This is the show income endpoint via controller');
+
+  //   res.status(200).json({ income: income.rows });
+  //   } catch (err) {
+  //     console.log(err.message);
+  //     res.status(500).send('Server Error');
+  //   }
+};
+
 const showIncome = async (res, req) => {
   res.send(`This is show income end point`);
 };
