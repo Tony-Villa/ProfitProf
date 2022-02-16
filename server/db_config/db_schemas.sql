@@ -48,9 +48,10 @@ CREATE TABLE goals (
     user_id uuid REFERENCES users (id) ON DELETE CASCADE,
     goal_type goal_type,
     goal_subtype goal_subtype,
-    description VARCHAR(1024),
-    value INT NOT NULL DEFAULT 0,
+    description VARCHAR(255),
+    total_amount INT NOT NULL DEFAULT 0,
+    monthly_cap INT NOT NULL DEFAULT 0,
+    due_date DATE NOT NULL,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
-
