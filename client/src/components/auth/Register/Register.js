@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Register = () => {
+const Register = ({ setAuth }) => {
   const [inputs, setInputs] = useState({
     email: '',
     username: '',
@@ -19,7 +19,7 @@ const Register = () => {
     try {
       const body = { email, username, first_name, password };
 
-      console.log(body);
+      //   console.log(body);
 
       const res = await fetch(`https://profitprof.herokuapp.com/v1/auth/register`, {
         method: 'POST',
@@ -29,7 +29,7 @@ const Register = () => {
       const parsedRes = await res.json();
 
       localStorage.setItem('token', parsedRes.token);
-      //   setAuth(true);
+      setAuth(true);
     } catch (err) {
       console.log(err.message);
     }
