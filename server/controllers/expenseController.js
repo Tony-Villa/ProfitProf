@@ -28,6 +28,24 @@ const addExpense = async (req, res, next) => {
   }
 };
 
+const editExpense = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const { expense_type, expense_subtype, description, value } = req.body;
+
+    const updatedExpense = await pool.query(
+      'UPDATE reviews SET expense_type = $1, expense_subtype = $2, description = $3, value = $4 WHERE id = $5',
+      [expense_type, expense_subtype, description, value, id]
+    );
+
+    res.status(200).json('Review was updated!');
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).send('Server Error');
+  }
+};
+
 const removeExpense = async (req, res) => {
   try {
     const { id } = req.params;
@@ -43,5 +61,6 @@ const removeExpense = async (req, res) => {
 module.exports = {
   showExpenses,
   addExpense,
+  editExpense,
   removeExpense,
 };
