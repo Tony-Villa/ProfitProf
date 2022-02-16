@@ -39,7 +39,7 @@ const editExpense = async (req, res) => {
       [expense_type, expense_subtype, description, value, id]
     );
 
-    res.status(200).json('Review was updated!');
+    res.status(200).json('Expense was updated!');
   } catch (err) {
     console.log(err.message);
     res.status(500).send('Server Error');
