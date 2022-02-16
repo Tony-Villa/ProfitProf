@@ -13,7 +13,7 @@ require('dotenv').config();
 // };
 
 const showIncome = async (res, req) => {
-  res.send(`User id is ${req.params.user_id}`);
+  res.send(`This is show income end point`);
 };
 
 const addIncome = async (req, res) => {
@@ -21,7 +21,7 @@ const addIncome = async (req, res) => {
     const { user_id, fixed_income, variable_income } = req.body;
 
     const income = await pool.query(
-      `INSERT INTO income (user_id, fixed_income, variable_income) VALUES ($1,$2,$3) RETURNING *`,
+      'INSERT INTO income (user_id, fixed_income, variable_income) VALUES ($1,$2,$3) RETURNING *',
       [user_id, fixed_income, variable_income]
     );
 
