@@ -12,20 +12,21 @@ const showExpenses = async (req, res) => {
   }
 };
 
-// const addIncome = async (req, res) => {
-//   try {
-//     const { user_id, fixed_income, variable_income } = req.body;
+const addExpense = async (req, res, next) => {
+  try {
+    const { user_id, expense_type, expense_subtype, description, value } = req.body;
 
-//     const income = await pool.query(
-//       'INSERT INTO income (user_id, fixed_income, variable_income) VALUES ($1,$2,$3) RETURNING *',
-//       [user_id, fixed_income, variable_income]
-//     );
+    const newReview = await pool.query(
+      'INSERT INTO expenses (user_id, expense_type,expense_subtype,description, value) VALUES ($1,$2,$3,$4,$5) RETURNING *',
+      [user_id, expense_type, expense_subtype, description, value]
+    );
 
-//     res.status(200).json({ income: income.rows[0] });
-//   } catch (err) {
-//     res.status(500).json({ message: err.message });
-//   }
-// };
+    res.json({ review: newReview.rows[0] });
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).send('Server Error');
+  }
+};
 
 // const deleteIncome = async (req, res) => {
 //   try {
@@ -41,4 +42,5 @@ const showExpenses = async (req, res) => {
 
 module.exports = {
   showExpenses,
+  addExpense,
 };
