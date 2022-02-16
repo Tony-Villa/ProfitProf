@@ -7,7 +7,8 @@ const showIncome = async (res, req) => {
 
     res.status(200).json({ income: income.rows });
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    console.log(err.message);
+    res.status(500).send('Server Error');
   }
 };
 
@@ -23,6 +24,18 @@ const addIncome = async (req, res) => {
     res.status(200).json({ income: income.rows[0] });
   } catch (err) {
     res.status(500).json({ message: err.message });
+  }
+};
+
+const deleteIncome = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deleteIncome = await pool.query('DELETE FROM income WHERE id = $1', [id]);
+
+    res.json('Income item was deleted');
+  } catch (err) {
+    res.status(500).send('Server Error');
   }
 };
 
