@@ -1,19 +1,16 @@
 const pool = require('../db_config/db');
 require('dotenv').config();
 
-// const showIncome = async (res, req) => {
-//   try {
-//     const income = await pool.query('SELECT * FROM income WHERE user_id = $1', [req.params.user_id]);
+const showIncome = async (req, res) => {
 
-//     res.status(200).json({ income: income.rows });
-//   } catch (err) {
-//     console.log(err.message);
-//     res.status(500).send('Server Error');
-//   }
-// };
+  try {
+    const income = await pool.query('SELECT * FROM income WHERE user_id = $1', [req.params.user_id]);
 
-const showIncome = async (res, req) => {
-  res.send(`This is show income end point`);
+    res.status(200).json({ income: income.rows });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Server Error');
+  }
 };
 
 const addIncome = async (req, res) => {
@@ -46,4 +43,5 @@ const deleteIncome = async (req, res) => {
 module.exports = {
   showIncome,
   addIncome,
+  deleteIncome,
 };
