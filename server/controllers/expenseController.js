@@ -28,19 +28,20 @@ const addExpense = async (req, res, next) => {
   }
 };
 
-// const deleteIncome = async (req, res) => {
-//   try {
-//     const { id } = req.params;
+const removeExpense = async (req, res) => {
+  try {
+    const { id } = req.params;
 
-//     const deleteIncome = await pool.query('DELETE FROM income WHERE id = $1', [id]);
+    const deletedExpense = await pool.query('DELETE FROM income WHERE id = $1', [id]);
 
-//     res.json('Income item was deleted');
-//   } catch (err) {
-//     res.status(500).send('Server Error');
-//   }
-// };
+    res.json('Expense item was removed');
+  } catch (err) {
+    res.status(500).send('Server Error');
+  }
+};
 
 module.exports = {
   showExpenses,
   addExpense,
+  removeExpense,
 };
