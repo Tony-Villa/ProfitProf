@@ -38,6 +38,8 @@ CREATE TABLE income (
 
 -- GOALS
 
+-- add total amount && monthly cap && due date
+
 CREATE TYPE goal_type AS ENUM ('short term', 'mid term', 'long term');
 CREATE TYPE goal_subtype AS ENUM ('vacation', 'credit card payment', 'house downpayment', 'car purchase', 'college', 'loan payment', 'retirement', 'emergency', 'other goal');
 
@@ -51,3 +53,4 @@ CREATE TABLE goals (
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
