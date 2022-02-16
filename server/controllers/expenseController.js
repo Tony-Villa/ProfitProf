@@ -35,11 +35,11 @@ const editExpense = async (req, res) => {
     const { expense_type, expense_subtype, description, value } = req.body;
 
     const updatedExpense = await pool.query(
-      'UPDATE reviews SET expense_type = $1, expense_subtype = $2, description = $3, value = $4 WHERE id = $5',
+      'UPDATE expenses SET expense_type = $1, expense_subtype = $2, description = $3, value = $4 WHERE id = $5',
       [expense_type, expense_subtype, description, value, id]
     );
 
-    res.status(200).json('Review was updated!');
+    res.status(200).json('Expense was updated!');
   } catch (err) {
     console.log(err.message);
     res.status(500).send('Server Error');
