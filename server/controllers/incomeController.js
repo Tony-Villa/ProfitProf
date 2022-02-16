@@ -46,4 +46,5 @@ const deleteIncome = async (req, res) => {
 module.exports = {
   showIncome,
   addIncome,
+  deleteIncome,
 };
