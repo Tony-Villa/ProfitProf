@@ -3,6 +3,7 @@ import './variables.scss';
 import './app.scss';
 import './media.scss';
 
+
 import AuthForm from './components/auth/AuthForm/AuthForm';
 import { UserContext } from './Context/UserContext';
 import { useEffect, useMemo, useState } from 'react';
