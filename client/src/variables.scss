@@ -1,46 +1,83 @@
 /*#region Variables*/
-$darkcolor: rgb(38, 38, 38);
-$lightcolor: rgb(223, 244, 225);
-$lavender1: #544c64;
-$lavender2: #68607c;
-$lavender3: #84749c;
-$lavender4: #b3bdd6;
-$cyan1: #64bbce;
-$cyan2: #86c1ce;
-$cyan3: #42bec8;
-$green1: #87d6a2;
-$green2: #8be6b6;
-$pink1: #e7afdc;
+$blackcolor: #1c0a00;
+$whitecolor: #ffebe4;
+
+$primarylight: #40B159;
+$primarylightmed: #1EA43C;
+$primarymed: #0D8628; /* primary */
+$primarydarkmed: #006C18;
+$primarydark: #004C11;
+
+$secondarylight: #EA6254;
+$secondarylightmed: #D93827;
+$secondarymed: #B12011; /* secondary */
+$secondarydarkmed: #8F0E00;
+$secondarydark: #650A00;
+
+$tertiarylight: #db9fcf;
+$tertiarylightmed: #9C1C84;
+$tertiarymed: #993386; /* tertiary */
+$tertiarydarkmed: #670053;
+$tertiarydark: #48003A;
+
+$quarternarylight: #eebf78;
+$quarternarylightmed: #d89638;
+$quarternarymed: #B17011; /* quarternary */
+$quarternarydarkmed: #3e0022;
+$quarternarydark: #210600;
 /*#region mixins*/
 
 
 /*#endregion mixins*/
-@mixin light-on-dark {
-  color: $lightcolor;
-  background-color: $darkcolor;
-}
-
-@mixin dark-on-light {
-  color: $darkcolor;
-  background-color: $lightcolor;
-}
-
-@mixin combo1 {
-    background-color: darkgoldenrod;
-    background-image: linear-gradient(45deg, $lavender1, $pink1);
-    background-clip: text;
-    /* background-size: 100%; */
-    /* background-repeat: repeat; */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
-}
-
-@mixin gradient1 {
-    background-image: linear-gradient(green,blue)
-
-}
+@mixin light-on-dark-1 {
+    color: $whitecolor;
+    background-color: $blackcolor;
+      }
+  
+  @mixin light-on-dark-purple {
+      color: $primarylight;
+      background-color: $blackcolor;
+      }
+  
+  @mixin light-on-dark-gold {
+      color: $secondarylight;
+      background-color: $secondarydark;
+      }
+  
+  @mixin light-on-dark-magenta {
+      color: $tertiarylight;
+      background-color: $tertiarydark;
+      }
+  
+  @mixin light-on-dark-lime {
+      color: $quarternarylight;
+      background-color: $quarternarydark;
+      }
+  
+  @mixin dark-on-light {
+    color: $whitecolor;
+    background-color: $blackcolor;
+      }
+  
+  @mixin dark-on-light-purple {
+      color: $primarydark;
+      background-color: $primarylight;
+      }
+  
+  @mixin dark-on-light-gold {
+      color: $secondarydark;
+      background-color: $secondarylight;
+      }
+  
+  @mixin dark-on-light-magenta {
+      color: $tertiarydark;
+      background-color: $tertiarylight;
+      }
+  
+  @mixin dark-on-light-lime {
+      color: $quarternarydark;
+      background-color: $quarternarylight;
+      }
 
 
 /*#endregion Variables*/
