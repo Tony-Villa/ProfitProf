@@ -17,7 +17,7 @@ const Login = ({ setAuth }) => {
     try {
       const body = { username, password };
 
-      const res = await fetch(`https://profitprof.herokuapp.com/v1/auth/register`, {
+      const res = await fetch(`https://profitprof.herokuapp.com/v1/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
