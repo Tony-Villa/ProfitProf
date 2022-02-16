@@ -6,7 +6,7 @@ const AuthForm = ({ setAuth }) => {
   const [login, setLogin] = useState(false);
 
   return (
-    <div>
+    <div className='authform'>
       {login ? <Register setAuth={setAuth} /> : <Login setAuth={setAuth} />}
 
       {login ? (

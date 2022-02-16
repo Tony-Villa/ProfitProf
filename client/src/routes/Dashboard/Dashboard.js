@@ -16,7 +16,7 @@ const Dashboard = ({ setAuth }) => {
   };
 
   return (
-    <div>
+    <div className='dashboard'>
       {user?.username && <h1>Welcome, {user.first_name}</h1>}
 
       {user?.username && <button onClick={(e) => logout(e)}>Log Out</button>}
