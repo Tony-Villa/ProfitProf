@@ -32,7 +32,7 @@ const removeExpense = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const deletedExpense = await pool.query('DELETE FROM income WHERE id = $1', [id]);
+    const deletedExpense = await pool.query('DELETE FROM expenses WHERE id = $1', [id]);
 
     res.json('Expense item was removed');
   } catch (err) {
