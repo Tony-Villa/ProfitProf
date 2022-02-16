@@ -35,7 +35,7 @@ const editGoal = async (req, res) => {
     const { goal_type, goal_subtype, description, total_amount, monthly_cap, due_date } = req.body;
 
     const updatedGoal = await pool.query(
-      'UPDATE goals SET goal_type = $1, goal_subtype = $2, description = $3, total_amount = $4, monthly_cap = $5, due_date = $6 WHERE id = $5',
+      'UPDATE goals SET goal_type = $1, goal_subtype = $2, description = $3, total_amount = $4, monthly_cap = $5, due_date = $6 WHERE id = $7',
       [goal_type, goal_subtype, description, total_amount, monthly_cap, due_date, id]
     );
 
