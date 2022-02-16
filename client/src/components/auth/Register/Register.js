@@ -36,13 +36,25 @@ const Register = ({ setAuth }) => {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
+    <div className='login_div'>
+      <div className='login_header'>
+        <h3>Register</h3>
+      </div>
+      
 
-      <form className="" onSubmit={onSubmitForm} autoComplete="off">
-        <input className="" type="email" name="email" placeholder="email" value={email} onChange={(e) => onChange(e)} />
+      <form className="login_form" onSubmit={onSubmitForm} autoComplete="off">
+        <input 
+        className="input-auth"
+        id="login_email"
+        type="email" 
+        name="email" 
+        placeholder="email" 
+        value={email} 
+        onChange={(e) => onChange(e)} 
+        />
         <input
-          className=""
+          className="input-auth"
+          id="login_username"
           type="text"
           name="username"
           placeholder="username"
@@ -50,7 +62,8 @@ const Register = ({ setAuth }) => {
           onChange={(e) => onChange(e)}
         />
         <input
-          className=""
+          className="input-auth"
+          id="login_firstname"
           type="text"
           name="first_name"
           placeholder="First Name"
@@ -58,7 +71,8 @@ const Register = ({ setAuth }) => {
           onChange={(e) => onChange(e)}
         />
         <input
-          className=""
+          className="input-auth"
+          id="login_password"
           type="password"
           name="password"
           placeholder="password"
@@ -66,7 +80,8 @@ const Register = ({ setAuth }) => {
           onChange={(e) => onChange(e)}
         />
 
-        <button className="mt-1 btn-search submit">Sign Up</button>
+        <button className="mt-1 btn-search submit" id="login_signup">Sign Up</button>
+        <h6>By choosing an account, you agree to our Terms and have read and acknowledge our Global Privacy Statement.</h6>
       </form>
     </div>
   );

@@ -14,6 +14,8 @@ const AuthForm = ({ setAuth }) => {
       ) : (
         <button onClick={() => setLogin(!login)}>Register!</button>
       )}
+
+        
     </div>
   );
 };
