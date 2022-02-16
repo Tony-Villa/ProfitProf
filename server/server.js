@@ -18,6 +18,7 @@ app.get('/v1', (req, res) => {
 
 app.use('/v1/auth', routes.users);
 app.use('/v1/income', routes.income);
+app.use('/v1/expenses', routes.expenses);
 
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server listnening on por ${PORT}`);
