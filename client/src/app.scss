@@ -8,28 +8,93 @@ html {
 
         .App {
             // background-color: blue;
-
+            width: 100%;
+            height: 100vh;
             .navbar {
                 background-color: orange;
+
             }
 
-            .login_username {
-                background-color: green;
+            // .login_username {
+            //     background-color: green;
                 
-            }
-
-
-            .home {
+            // }
+            .home { //home is the splash page//
                 background-color: red;
+                height: 100%;
 
-                .authform {
-                    background-color: pink;
+                .splash_title_div {
+                    background-color: gold;
+                    display: flex;
+                    height: 15%;
+                    width: 100%;
+
+                    .splash_title {
+                        background-color: aqua;
+                        height: 100%;
+                        width: 50%;
+                        padding-top: 3%;
+                        h1 {
+                            font-size: 34px;
+                            padding-left: 10%;
+                        } 
+                    }
+
+                    .splash_nav {
+                        display: flex;
+                        justify-content: space-around;
+                        margin-left: auto;
+                        margin-right: 40px;
+                        padding-top: 3%;
+                        .splah_nav_link {
+                            margin: 0 20px;
+                            // border: 1px solid black;
+                        }
+                    }
+                } // closing splash_title_div
+
+                .splash_main_div {
+                    background-color: lime;
+                    display: flex;
+                    width: 100%;
+                    height: 85%;
+                    
+
+                    .splash_main_left {
+                        background-color: red;
+                        width: 50%;
+                        h1 {
+                            font-size: 48px;
+                            margin: 40% 0;
+                        }  
+                    }
+
+                    .splash_main_right {
+                        background-color: pink;
+                        padding: 40px;
+                        width: 50%;
+     
+
+                        .authform {
+                            background-color: blue;
+                            margin: 0 auto;
+                      
+                            border-radius: 20px;
+                            border: 1px black solid;
+            
+                            
+                            
+                        }
+                        
+                    }
+
                 }
 
-            }
+
+            } //closing home
 
             .dashboard {
-                background-color: green;
+                // background-color: green;
             }
 
 
