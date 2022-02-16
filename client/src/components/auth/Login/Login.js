@@ -47,7 +47,7 @@ const Login = ({ setAuth }) => {
     <div>
       <h1>Login</h1>
 
-      <form className="flex login__form" onSubmit={onSubmitForm} autoComplete="off">
+      <form className="login_username" onSubmit={onSubmitForm} autoComplete="off">
         <input
           className="input-auth"
           type="text"
