@@ -44,12 +44,15 @@ const Login = ({ setAuth }) => {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-
-      <form className="login_username" onSubmit={onSubmitForm} autoComplete="off">
+    <div className='login_div'>
+      <div className='login_header'>
+        <h3>Login</h3>
+      </div>
+      
+      <form className="login_form" onSubmit={onSubmitForm} autoComplete="off">
         <input
           className="input-auth"
+          id="login_username"
           type="text"
           name="username"
           placeholder="username"
@@ -58,6 +61,7 @@ const Login = ({ setAuth }) => {
         />
         <input
           className="input-auth"
+          id="login_password"
           type="password"
           name="password"
           placeholder="password"
@@ -65,7 +69,8 @@ const Login = ({ setAuth }) => {
           onChange={(e) => onChange(e)}
         />
 
-        <button className="btn-search login__submit">Submit</button>
+        <button className="btn-search login__submit" id="login_submit">Submit</button>
+        <h6>By choosing an account, you agree to our Terms and have read and acknowledge our Global Privacy Statement.</h6>
       </form>
     </div>
   );
