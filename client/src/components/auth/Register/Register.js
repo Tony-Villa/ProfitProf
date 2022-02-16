@@ -66,7 +66,7 @@ const Register = ({ setAuth }) => {
           onChange={(e) => onChange(e)}
         />
 
-        <button className="mt-1 btn-search submit">Submit</button>
+        <button className="mt-1 btn-search submit">Sign Up</button>
       </form>
     </div>
   );

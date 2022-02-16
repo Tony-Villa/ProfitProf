@@ -12,7 +12,7 @@ const AuthForm = ({ setAuth }) => {
       {login ? (
         <button onClick={() => setLogin(!login)}>Log In!</button>
       ) : (
-        <button onClick={() => setLogin(!login)}>Sign Up! </button>
+        <button onClick={() => setLogin(!login)}>Register!</button>
       )}
     </div>
   );
