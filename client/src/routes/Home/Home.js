@@ -8,10 +8,12 @@ const Home = ({ isUser, setAuth }) => {
   console.log(user?.username);
   console.log(isUser);
   return (
-    <div>
+    <div className="home">
       <h1>Hello, Profit Prof</h1>
 
-      <AuthForm setAuth={setAuth} />
+      <div className="authform">
+        <AuthForm setAuth={setAuth} />
+      </div>
     </div>
   );
 };

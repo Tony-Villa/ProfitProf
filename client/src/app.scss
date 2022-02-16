@@ -1,2 +1,48 @@
 
+html {
+    background-color: lightgrey; //100% verticle view
 
+    body {
+        // background-color: blue; 
+
+
+        .App {
+            // background-color: blue;
+
+            .navbar {
+                background-color: orange;
+            }
+
+            .login_username {
+                background-color: green;
+                
+            }
+
+
+            .home {
+                background-color: red;
+
+                .authform {
+                    background-color: pink;
+                }
+
+            }
+
+            .dashboard {
+                background-color: green;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+        } //closing .APP
+    } //closing body
+}  //closing html
