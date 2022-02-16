@@ -24,9 +24,9 @@ const showIncome = async (req, res) => {
   //   }
 };
 
-const showIncome = async (res, req) => {
-  res.send(`This is show income end point`);
-};
+// const showIncome = async (res, req) => {
+//   res.send(`This is show income end point`);
+// };
 
 const addIncome = async (req, res) => {
   try {
