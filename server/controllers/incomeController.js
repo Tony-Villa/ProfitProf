@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const showIncome = async (res, req) => {
   try {
-    const income = await pool.query('SELECT * FROM income WHERE user_id = $1'[req.body.user_id]);
+    const income = await pool.query('SELECT * FROM income WHERE user_id = $1'[req.params.user_id]);
 
     res.status(200).json({ income: income.rows });
   } catch (err) {
