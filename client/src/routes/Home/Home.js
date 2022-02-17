@@ -3,6 +3,8 @@ import AuthForm from '../../components/auth/AuthForm/AuthForm';
 import { UserContext } from '../../Context/UserContext';
 import { Link } from 'react-router-dom';
 import "./Home.scss"
+import logo from "../../assets/logo.png";
+import bgimage from "../../assets/background.png";
 
 const Home = ({ isUser, setAuth }) => {
   const { user } = useContext(UserContext);
@@ -11,20 +13,21 @@ const Home = ({ isUser, setAuth }) => {
   console.log(isUser);
   return (
     <div className="splash">
+    
       <div className="splash_title_div">
         <div className="splash_title">
-          <h1>ProfitProf</h1>
+          <img src={logo} ></img>
         </div>
 
         <div className="splash_nav">
           <Link to="howitworks" className="splah_nav_link">
-            <h2>How It Works</h2>
+            <h6>How It Works</h6>
           </Link>
           <Link to="pricing" className="splah_nav_link">
-            <h2>Pricing</h2>
+            <h6>Pricing</h6>
           </Link>
           <Link to="resources" className="splah_nav_link">
-            <h2>Resources</h2>
+            <h6>Resources</h6>
           </Link>
         </div>
       </div>
@@ -32,7 +35,8 @@ const Home = ({ isUser, setAuth }) => {
       <div className="splash_main_div">
         <div className="splash_main_left">
           <div className="splash__title-container">
-            <h1 className="splash__title">Managing financial goals has never been easier</h1>
+            <h2>ProfitProf</h2>
+            <h3 className="splash__title">Managing financial goals has never been easier</h3>
           </div>
         </div>
 
