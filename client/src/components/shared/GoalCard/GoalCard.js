@@ -29,6 +29,7 @@ const GoalCard = ({ goal_subtype, description, current_amount, total_amount, mon
   //   };
 
   //   const remainingMonths = getRemainingMonths(current_amount, total_amount, monthly_cap);
+
   const randomNumber = Math.floor(Math.random() * 5) + 4;
   const currentPercent = getPercent(current_amount, total_amount);
 
