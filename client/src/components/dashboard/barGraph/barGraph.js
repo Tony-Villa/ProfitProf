@@ -51,19 +51,20 @@ const BarGraph = () => {
       ];
       
       const axisBottom = {
-        tickSize: 5,
+        tickSize: 0,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "",
+        legend: "hello",
         legendPosition: "middle",
-        legendOffset: 32
+        legendOffset: 32,
+        stroke: "#000"
       };
       
       const axisLeft = {
-        tickSize: 5,
+        tickSize: 0,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "Currency ($)",
+        // legend: "Amount",
         legendPosition: "middle",
         legendOffset: -40
       };
@@ -71,7 +72,7 @@ const BarGraph = () => {
       const theme = {
         axis: {
           fontSize: "14px",
-          tickColor: "#eee",
+          // tickColor: "#eee",
           ticks: {
             line: {
               stroke: "#555555"
@@ -88,9 +89,11 @@ const BarGraph = () => {
         },
         grid: {
           line: {
-            stroke: "#555555"
+            // stroke: "f5f5f585",
+            // stroke: "#000",
           }
         }
+        
       };
 
       // This is needed for adjusting the dimensions of each bar in the graph. Needed to call "custombarcomponent" in the main return//
@@ -161,6 +164,7 @@ const BarGraph = () => {
                 labelSkipWidth={12}
                 labelSkipHeight={12}
                 enableGridX={false}
+                enableGridY={false}
                 axisBottom={axisBottom}
                 axisLeft={axisLeft}
                 colorBy={colorBy}
@@ -168,8 +172,10 @@ const BarGraph = () => {
                 legends={legends}
                 barComponent={CustomBarComponent} /* needed for individual bar properties */
                 colors={getColor} /*needed for bargraph color override*/
+                
             />
-            
+            <div className='stroke'>
+                </div>
         </div>
     </div>
   );
