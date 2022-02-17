@@ -32,7 +32,7 @@ const GoalCard = ({ goal_subtype, description, current_amount, total_amount, mon
 
   return (
     <div className="goal-card flex">
-      <div className="goal-card__left">
+      <div className="goal-card__left flex">
         <img src={thumbnailPicker[goal_subtype]} alt="" />
       </div>
       <div className="goal-card__right ml-1">
@@ -48,6 +48,9 @@ const GoalCard = ({ goal_subtype, description, current_amount, total_amount, mon
           </div>
           <div className="goal-card__months-left">
             <p>{randomNumber} months to go!</p>
+          </div>
+          <div className="goal-card__on-track">
+            <span className="subtitle">On Schedule</span>
           </div>
         </div>
       </div>

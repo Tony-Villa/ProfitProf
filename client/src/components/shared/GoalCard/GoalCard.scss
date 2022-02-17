@@ -11,13 +11,16 @@
 
   &__left {
     width: 35%;
+    @include flex(row, center, center);
   }
 
   &__right {
     width: 62%;
+    height: 100%;
   }
 
   &__content {
+    height: 95%;
     @include flex(column, center, flex-start);
   }
 
@@ -35,5 +38,13 @@
     border-radius: get-size(4);
     box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     background-color: $blue;
+  }
+
+  &__on-track {
+    border: 1px solid $orange;
+    justify-self: flex-end;
+    padding: 3px 5px;
+    border-radius: 5px;
+    margin-top: 0.5rem;
   }
 }
