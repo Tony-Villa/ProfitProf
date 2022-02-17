@@ -1,1 +1,24 @@
 @use '../../../scss/' as *;
+
+.goals-sum {
+  padding: get-size(9);
+  &__cards-container {
+    flex-wrap: wrap;
+  }
+
+  &__new-goal {
+    width: 23.5rem;
+    height: 10.5rem;
+    padding: get-spacing(6);
+    background-color: $whitecolor;
+    border-radius: get-size(4);
+    box-shadow: 4px 4px 14px 0 rgba(0, 0, 0, 0.1);
+    margin: 24px 61px 27px 0;
+
+    @include flex(row, center, center);
+
+    img {
+      margin: 0 auto;
+    }
+  }
+}

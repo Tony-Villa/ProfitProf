@@ -1,14 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import GoalsSummary from '../../components/dashboard/goalsSummary/GoalsSummary';
-import PieChart from '../../components/dashboard/pieChart/PieChart';
-import SavingsSummary from '../../components/dashboard/savingsSummary/SavingsSummary';
 import DashNav from '../../components/layout/DashNav/DashNav';
-import BarGraph from '../../components/dashboard/barGraph/barGraph';
 import { UserContext } from '../../Context/UserContext';
-import './Dashboard.scss';
+import '../Dashboard/Dashboard.scss';
+import './Goals.scss';
+import '../../components/dashboard/goalsSummary/GoalsSummary.scss';
+import GoalCard from '../../components/shared/GoalCard/GoalCard';
+import plus from '../../assets/icons/Pluse.png';
 
-const Dashboard = ({ setAuth }) => {
+const Goals = ({ setAuth }) => {
   const [income, setIncome] = useState({});
   const [expenses, setExpenses] = useState({});
   const [goals, setGoals] = useState({});
@@ -67,6 +67,14 @@ const Dashboard = ({ setAuth }) => {
     navigate('/');
   };
 
+  const genGoalCards = (goalArr) => {
+    return goalArr.map((goal, idx) => goal.current_amount < goal.total_amount && <GoalCard key={idx} {...goal} />);
+  };
+
+  const genCompleteGoalCards = (goalArr) => {
+    return goalArr.map((goal, idx) => goal.current_amount >= goal.total_amount && <GoalCard key={idx} {...goal} />);
+  };
+
   useEffect(() => {
     getIncome();
     getExpenses();
@@ -75,27 +83,34 @@ const Dashboard = ({ setAuth }) => {
   }, [user?.id]);
 
   return (
-    <div className="dashboard flex">
+    <div className="goals flex">
       <div className="dashboard__nav mr-2">
-        <DashNav logout={logout} income={income} goals={goals} data={expenses} />
+        <DashNav logout={logout} />
       </div>
-
-      <div className="dashboard__summary grid mt-1 mb-1">
-        <div className="dashboard__savings">
-          <SavingsSummary income={income} />
+      <div className="goals__content flex">
+        <div className="goals__top goals__container">
+          <h3>Welcome to goals y'all</h3>
+          <div className="flex">
+            <div className="goals-sum__new-goal flex">
+              <div className="goals-sum__goal-add">
+                <h6>Add New Goal</h6>
+                <img src={plus} alt="" />
+              </div>
+            </div>
+            <div className="goals-sum__cards-container flex">
+              {goals.length ? genGoalCards(goals) : <h4>loading...</h4>}
+            </div>
+          </div>
         </div>
-        <div className="dashboard__goals">
-          <GoalsSummary goals={goals} />
-        </div>
-        <div className="dashboard__expenses">
-          <PieChart data={expenses} />
-        </div>
-        <div className="dashboard__barGraph">
-          <BarGraph />
+        <div className="goals__bottom goals__container">
+          <h3>Welcome to goals y'all</h3>
+          <div className="goals-sum__cards-container flex">
+            {goals.length ? genCompleteGoalCards(goals) : <h4>loading...</h4>}
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Dashboard;
+export default Goals;
