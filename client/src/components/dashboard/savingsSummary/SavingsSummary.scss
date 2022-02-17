@@ -1,1 +1,7 @@
 @use '../../../scss/' as *;
+
+.save-sum {
+  &__greeting {
+    font-weight: 800;
+  }
+}

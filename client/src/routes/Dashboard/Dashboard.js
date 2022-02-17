@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import PieChart from '../../components/dashboard/pieChart/PieChart';
+import SavingsSummary from '../../components/dashboard/savingsSummary/SavingsSummary';
 import DashNav from '../../components/layout/DashNav/DashNav';
 import { UserContext } from '../../Context/UserContext';
 import './Dashboard.scss';
@@ -80,7 +81,7 @@ const Dashboard = ({ setAuth }) => {
 
       <div className="dashboard__summary grid mt-1 mb-1">
         <div className="dashboard__savings">
-          <p>Savings go here</p>
+          <SavingsSummary income={income} />
         </div>
         <div className="dashboard__goals">
           <p>Goals go here</p>
