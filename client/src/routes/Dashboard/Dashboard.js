@@ -76,7 +76,7 @@ const Dashboard = ({ setAuth }) => {
 
   return (
     <div className="dashboard flex">
-      <div className="dashboard__nav mr-2">
+      <div className="dashboard__nav mr-1">
         <DashNav logout={logout} income={income} goals={goals} data={expenses} />
       </div>
 

@@ -1,18 +1,20 @@
 import React, { useContext, useState } from 'react';
+import { ReloadContext } from '../../../Context/ReloadContext';
 import { UserContext } from '../../../Context/UserContext';
 import './AddGoal.scss';
 
 const AddGoal = ({}) => {
+  const { isReload, setIsReload } = useContext(ReloadContext);
   const { user } = useContext(UserContext);
 
   const [inputs, setInputs] = useState({
     user_id: user.id,
     goal_type: 'short term',
-    goal_subtype: 'credit card payment',
+    goal_subtype: 'vacation',
     description: '',
-    total_amount: null,
-    monthly_cap: null,
-    current_amount: 0,
+    total_amount: 500,
+    monthly_cap: 250,
+    current_amount: 100,
     due_date: '2022-09-25',
   });
 
@@ -28,14 +30,15 @@ const AddGoal = ({}) => {
     const body = { user_id, goal_type, goal_subtype, description, total_amount, monthly_cap, due_date };
 
     try {
-      const res = await fetch(`https://profitprof.herokuapp.com/v1/goals`, {
+      const res = await fetch(`https://profitprof.herokuapp.com/v1/goals/`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body),
       });
       const parsedRes = await res.json();
 
-      //   setIsReload(!isReload);
+      setIsReload(!isReload);
+
       //   handleClose();
     } catch (err) {
       console.log(err.message);

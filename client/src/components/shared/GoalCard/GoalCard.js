@@ -50,7 +50,11 @@ const GoalCard = ({ goal_subtype, description, current_amount, total_amount, mon
             <p>{randomNumber} months to go!</p>
           </div>
           <div className="goal-card__on-track">
-            <span className="subtitle">On Schedule</span>
+            {current_amount < total_amount ? (
+              <span className="subtitle">On Schedule</span>
+            ) : (
+              <span className="subtitle">Achieved Oct 2021</span>
+            )}
           </div>
         </div>
       </div>
