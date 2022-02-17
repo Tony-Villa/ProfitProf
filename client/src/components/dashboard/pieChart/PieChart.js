@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ResponsivePie } from '@nivo/pie';
+import './PieChart.scss';
 
 const PieChart = (props) => {
   const [chartData, setChartData] = useState([]);
@@ -105,7 +106,7 @@ const PieChart = (props) => {
   }, [props]);
 
   return (
-    <div>
+    <div className="pie-chart">
       <h5>Fixed Expenses</h5>
       <div style={styles.root}>
         <ResponsivePie
