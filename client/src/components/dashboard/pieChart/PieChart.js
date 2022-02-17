@@ -1,12 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ResponsivePie } from '@nivo/pie';
 
 const PieChart = (props) => {
-  if (props.data[0]?.id) {
-    console.log(props.data[0].description);
-  } else {
-    console.log('No data');
-  }
+  const [chartData, setChartData] = useState([]);
 
   //==========================
   const margin = { top: 20, right: 150, bottom: 20, left: 20 };
@@ -40,48 +36,8 @@ const PieChart = (props) => {
       fontSize: 24,
     },
   };
-  // if(props.data[0]?.id){
-  //   const data1 = props.data.map((description, expense_type, value) =>
-  //     {
-  //       return {
-  //         id: description,
-  //         label: expense_type,
-  //         value: value,
-  //       }
-  //     }
-  //   );
-  //   console.log(data1);
-  // }
-  const data = [
-    {
-      id: 'Work',
-      label: 'Work',
-      value: 120,
-    },
-    {
-      id: 'Eat',
-      label: 'Eat',
-      value: 35,
-    },
-    {
-      id: 'Commute',
-      label: 'Commute',
-      value: 33,
-    },
-    {
-      id: 'Watch TV',
-      label: 'Watch TV',
-      value: 27,
-    },
-    {
-      id: 'Sleep',
-      label: 'Sleep',
-      value: 199,
-    },
-  ];
 
   const theme = {
-    background: '#222222',
     axis: {
       fontSize: '14px',
       tickColor: '#eee',
@@ -118,7 +74,9 @@ const PieChart = (props) => {
       itemHeight: 20,
       itemDirection: 'left-to-right',
       itemOpacity: 0.85,
-      itemTextColor: '#ffffff',
+
+      itemTextColor: '#black',
+
       symbolSize: 20,
       effects: [
         {
@@ -131,13 +89,28 @@ const PieChart = (props) => {
     },
   ];
 
+  useEffect(() => {
+    if (props.data[0]?.value > 0) {
+      const data = props.data.map((data) => {
+        const container = {};
+
+        container.id = data.expense_subtype;
+        container.label = data.expense_subtype;
+        container.value = data.value;
+
+        return container;
+      });
+      setChartData(data);
+    }
+  }, [props]);
+
   return (
     <div>
       <h5>Fixed Expenses</h5>
       <div style={styles.root}>
         <ResponsivePie
           margin={margin}
-          data={data}
+          data={chartData}
           innerRadius={0.5}
           enableRadialLabels={false}
           enableSlicesLabels={false}
