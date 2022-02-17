@@ -65,27 +65,34 @@ const AddGoal = ({ closeModal }) => {
       <div className="goal-form__content ">
         <form className="goal-form__form flex" onSubmit={onSubmitForm} autoComplete="off">
           <div className="goal-form__left flex">
+            <div className="full-width">
+              <label htmlFor="">Terms</label>
+            </div>
             <select className="goal-form__select-lg">
               <option value="short term">Short Term</option>
               <option value="mid term">Mid Term</option>
               <option value="long term">Long Term</option>
             </select>
 
+            <div className="full-width">
+              <label htmlFor="">Choose a goal</label>
+            </div>
             <select className="goal-form__select-lg">
               <option value="credit card payment">Pay Credit Card</option>
               <option value="vacation">Vacation</option>
               <option value="other goal">Other Goal</option>
             </select>
-
-            <label for="monthly_cap">Goal Title</label>
-            <input
-              className="input-form"
-              type="text"
-              name="description"
-              placeholder="Buy new shoes"
-              value={description}
-              onChange={(e) => onChange(e)}
-            />
+            <div className="goal-form__goal-title-container">
+              <label for="monthly_cap">Goal Title</label>
+              <input
+                className="input-form"
+                type="text"
+                name="description"
+                placeholder="Buy new shoes"
+                value={description}
+                onChange={(e) => onChange(e)}
+              />
+            </div>
           </div>
           <div className="goal-form__right flex">
             <div className="goal-form__date-select flex">
@@ -139,17 +146,23 @@ const AddGoal = ({ closeModal }) => {
               </div>
             </div>
 
-            <label for="total_amount">Amount Needed</label>
-            <input
-              className="input-form"
-              type="number"
-              name="total_amount"
-              placeholder="250"
-              value={total_amount}
-              onChange={(e) => onChange(e)}
-            />
+            <div className=" input-label amount-needed-container flex">
+              <div className="full-width">
+                <label for="total_amount">Amount Needed</label>
+              </div>
+              <input
+                className="input-form"
+                type="number"
+                name="total_amount"
+                placeholder="250"
+                value={total_amount}
+                onChange={(e) => onChange(e)}
+              />
+            </div>
 
-            <button className="btn submit btn-search mt-1 mb-1">Submit</button>
+            <div className="btn-container">
+              <button className="btn-submit-form mt-2 mb-1">Submit</button>
+            </div>
           </div>
 
           <input
