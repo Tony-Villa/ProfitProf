@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import GoalsSummary from '../../components/dashboard/goalsSummary/GoalsSummary';
 import PieChart from '../../components/dashboard/pieChart/PieChart';
 import SavingsSummary from '../../components/dashboard/savingsSummary/SavingsSummary';
 import DashNav from '../../components/layout/DashNav/DashNav';
@@ -77,20 +78,19 @@ const Dashboard = ({ setAuth }) => {
       <div className="dashboard__nav mr-2">
         <DashNav logout={logout} />
       </div>
-      {/* {user?.username && <h1>Welcome, {user.first_name}</h1>} */}
 
       <div className="dashboard__summary grid mt-1 mb-1">
         <div className="dashboard__savings">
           <SavingsSummary income={income} />
         </div>
         <div className="dashboard__goals">
-          <p>Goals go here</p>
+          <GoalsSummary goals={goals} />
         </div>
         <div className="dashboard__expenses">
           <PieChart data={expenses}/>
         </div>
         <div className="dashboard__barGraph">
-          <p>barGraph go here</p>
+          <p>this is for bargraph</p>
         </div>
       </div>
     </div>

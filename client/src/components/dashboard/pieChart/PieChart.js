@@ -9,82 +9,84 @@ const PieChart = (props) => {
 
   const styles = {
     root: {
-      fontFamily: "consolas, sans-serif",
-      textAlign: "center",
-      position: "relative",
+      fontFamily: 'consolas, sans-serif',
+      textAlign: 'center',
+      position: 'relative',
       width: 300,
-      height: 300
+      height: 300,
     },
     overlay: {
-      position: "absolute",
+      position: 'absolute',
       top: 0,
       right: margin.right,
       bottom: 0,
       left: margin.left,
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
       fontSize: 96,
-      color: "#FFFFFF",
+      color: '#FFFFFF',
       // background: "#FFFFFF33",
-      textAlign: "center",
+      textAlign: 'center',
       // This is important to preserve the chart interactivity
-      pointerEvents: "none"
+      pointerEvents: 'none',
     },
     totalLabel: {
-      fontSize: 24
-    }
+      fontSize: 24,
+    },
   };
 
   const theme = {
     axis: {
-      fontSize: "14px",
-      tickColor: "#eee",
+      fontSize: '14px',
+      tickColor: '#eee',
       ticks: {
         line: {
-          stroke: "#555555"
+          stroke: '#555555',
         },
         text: {
-          fill: "#black"
-        }
+          fill: '#black',
+        },
       },
       legend: {
         text: {
-          fill: "#black"
-        }
-      }
+          fill: '#black',
+        },
+      },
     },
     grid: {
       line: {
-        stroke: "#555555"
-      }
-    }
+        stroke: '#555555',
+      },
+    },
   };
-  
+
   const legends = [
     {
-      anchor: "right",
-      direction: "column",
+      anchor: 'right',
+      direction: 'column',
       justify: false,
       translateX: 140,
       translateY: 0,
       itemsSpacing: 2,
       itemWidth: 100,
       itemHeight: 20,
-      itemDirection: "left-to-right",
+      itemDirection: 'left-to-right',
       itemOpacity: 0.85,
+
       itemTextColor: "#black",
+
       symbolSize: 20,
       effects: [
         {
-          on: "hover",
+          on: 'hover',
           style: {
-            itemOpacity: 1
-          }
-        }
-      ]
-    }
+            itemOpacity: 1,
+          },
+        },
+      ],
+    },
   ];
 
   useEffect(() => {
