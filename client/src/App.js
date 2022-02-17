@@ -2,7 +2,7 @@ import AuthForm from './components/auth/AuthForm/AuthForm';
 import { UserContext } from './Context/UserContext';
 import { useEffect, useMemo, useState } from 'react';
 import AppRoutes from './routes/config/Routes';
-import Navbar from './components/layout/Navbar/Navbar';
+import SplashNav from './components/layout/SplashNav/SplashNav';
 import './app.scss';
 
 function App() {

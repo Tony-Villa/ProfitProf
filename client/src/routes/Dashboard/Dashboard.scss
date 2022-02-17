@@ -1,0 +1,19 @@
+@use '../../scss/' as *;
+
+.dashboard {
+  height: 100%;
+  width: 90vw;
+
+  .dashboard__summary {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    outline: 3px solid white;
+
+    &__savings {
+      background-color: white;
+      margin-left: 1rem;
+    }
+  }
+}

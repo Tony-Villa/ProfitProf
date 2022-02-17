@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Navbar = () => {
+const SplashNav = () => {
   return (
-    <div className='navbar'>
+    <div className="navbar">
       <h1>This is a Nav</h1>
       <ul>
         <li>1</li>
@@ -13,4 +13,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default SplashNav;
