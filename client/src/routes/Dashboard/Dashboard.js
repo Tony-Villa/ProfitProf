@@ -87,7 +87,7 @@ const Dashboard = ({ setAuth }) => {
           <GoalsSummary goals={goals} />
         </div>
         <div className="dashboard__expenses">
-          <PieChart data={expenses} />
+          <PieChart data={expenses}/>
         </div>
         <div className="dashboard__barGraph">
           <p>this is for bargraph</p>
