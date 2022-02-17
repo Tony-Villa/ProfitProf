@@ -1,0 +1,13 @@
+@use '../../../scss/' as *;
+
+.save-sum {
+  padding: get-size(9);
+
+  &__greeting {
+    font-weight: 800;
+  }
+
+  &__amount {
+    color: #8342e9;
+  }
+}

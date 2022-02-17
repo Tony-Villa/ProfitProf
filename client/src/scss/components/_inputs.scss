@@ -1,0 +1,27 @@
+@use '../abstracts/' as *;
+@use '../base/' as *;
+
+input {
+  width: 360px;
+  height: 2rem;
+  background: #fff;
+  color: $bgColor;
+  font-family: $contentFont;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  border: 0;
+  outline: 0;
+  padding: 22px 18px;
+  z-index: 1;
+
+  @media only screen and (max-width: 1200px) {
+    width: 17rem;
+    height: 2.75rem;
+    padding: 0.25rem;
+  }
+
+  @media only screen and (max-width: 850px) {
+    width: 10rem;
+    height: 2rem;
+    padding: 0.25rem;
+  }
+}

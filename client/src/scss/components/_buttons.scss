@@ -1,0 +1,24 @@
+@use '../abstracts/' as *;
+@use '../base/' as *;
+
+.btn {
+  font-size: 0.75rem;
+}
+
+.btn-yellow {
+  background-color: $yellow;
+  height: 50px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-generic {
+  background-color: $grey;
+  height: 35px;
+  width: 95px;
+  border-radius: 5px;
+  border: solid 1px black;
+  cursor: pointer;
+}

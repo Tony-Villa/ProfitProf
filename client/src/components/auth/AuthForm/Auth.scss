@@ -1,0 +1,70 @@
+@use '../../../scss/' as *;
+
+.authform {
+    background-color: lightgrey;
+    margin: 0 auto;
+    width: 33rem;
+    // width: 95%;
+    // height: 95%;
+    // border-radius: 20px;
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    // flex-wrap: wrap;
+
+    .login_div {
+      // background-color: green;
+      margin: 0 auto 0 auto;
+      width: 80%;
+      // height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      .login_header {
+        // background-color: red;
+        width: 100%;
+        margin: 15% 0 0 0;
+        padding: 0 0 20% 0;
+        h3 {
+          text-align: center;
+          font-size: 24px;
+        }
+      }
+
+      .login_form {
+        // background-color: darkorange;
+        margin: 0 auto 0 auto;
+        // padding-top: 50px;
+        width: 70%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        // top: 50px;
+        // flex-wrap: wrap;
+
+        .input-auth {
+          height: 40px;
+          text-align: center;
+          margin: 0 0 50px 0;
+          padding: 0 0 0 0;
+        }
+
+        #login_email,
+        #login_username,
+        #login_firstname {
+          // margin-top: 100px;
+          // background-color: aqua;
+        }
+        #login_password {
+          // background-color: aquamarine;
+        }
+
+        h6 {
+          text-align: center;
+          font-size: 14px;
+          // border: 1px solid black;
+        }
+      }
+    }
+  }

@@ -69,7 +69,7 @@ const Login = ({ setAuth }) => {
           onChange={(e) => onChange(e)}
         />
 
-        <button className="btn-search login__submit" id="login_submit">Submit</button>
+        <button className="btn-yellow login__submit" id="login_submit">Submit</button>
         <h6>By choosing an account, you agree to our Terms and have read and acknowledge our Global Privacy Statement.</h6>
       </form>
     </div>

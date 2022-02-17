@@ -1,0 +1,90 @@
+/*#region font*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*#endregion font*/
+
+/*#region Variables*/
+$blackcolor: #1c0a00;
+$whitecolor: #ffebe4;
+$yellow: #febd30;
+$orange: #f95722;
+$pink: #fba9d3;
+$blue: #4089fc;
+$lightpurple: #8342e9;
+$darkpurple: #421f79;
+
+$grey: #dcdcdc;
+
+/*#region mixins*/
+
+/*#endregion mixins*/
+@mixin light-on-dark-1 {
+  color: $whitecolor;
+  background-color: $blackcolor;
+}
+
+@mixin light-on-dark-purple {
+  color: $primarylight;
+  background-color: $blackcolor;
+}
+
+@mixin light-on-dark-gold {
+  color: $secondarylight;
+  background-color: $secondarydark;
+}
+
+@mixin light-on-dark-magenta {
+  color: $tertiarylight;
+  background-color: $tertiarydark;
+}
+
+@mixin light-on-dark-lime {
+  color: $quarternarylight;
+  background-color: $quarternarydark;
+}
+
+@mixin dark-on-light {
+  color: $whitecolor;
+  background-color: $blackcolor;
+}
+
+@mixin dark-on-light-purple {
+  color: $primarydark;
+  background-color: $primarylight;
+}
+
+@mixin dark-on-light-gold {
+  color: $secondarydark;
+  background-color: $secondarylight;
+}
+
+@mixin dark-on-light-magenta {
+  color: $tertiarydark;
+  background-color: $tertiarylight;
+}
+
+@mixin dark-on-light-lime {
+  color: $quarternarydark;
+  background-color: $quarternarylight;
+}
+
+/*#endregion Variables*/
+
+$bgColor: #1c1c1c;
+
+$textColor: #eeeeee;
+
+$accentColor: #e41f7b;
+
+hr {
+  width: 90%;
+  margin-top: 7rem;
+  height: 1px;
+}

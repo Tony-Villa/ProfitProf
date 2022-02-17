@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
+import "./Auth.scss"
 
 const AuthForm = ({ setAuth }) => {
   const [login, setLogin] = useState(false);
