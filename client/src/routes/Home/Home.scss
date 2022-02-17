@@ -1,89 +1,89 @@
 @use "../../scss/" as *;
 
-      .splash {
-        //home is the splash page//
-        // background-color: red;
-        height: 100%;
-        background: url("../../assets/background.png") no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+.splash {
+  //home is the splash page//
+  // background-color: red;
+  height: 100%;
+  background: url('../../assets/background.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-        .splash_title_div {
-          // background-color: gold;
-          display: flex;
-          height: 15%;
-          width: 100%;
+  .splash_title_div {
+    // background-color: gold;
+    display: flex;
+    height: 15%;
+    width: 100%;
 
-          .splash_title {
-            // background-color: aqua;
-            height: 100%;
-            width: 50%;
-            padding-top: 3%;
+    .splash_title {
+      // background-color: aqua;
+      height: 100%;
+      width: 50%;
+      padding-top: 3%;
 
-            img {
-              padding-left: 10%;
-            }
-          }
+      img {
+        padding-left: 10%;
+      }
+    }
 
-          .splash_nav {
-            display: flex;
-            justify-content: space-around;
-            margin-left: auto;
-            margin-right: 8%;
-            padding-top: 3%;
-            .splah_nav_link {
-              color: $whitecolor;
-              margin: 0 20px;
-              // border: 1px solid black;
-            }
-          }
-        } // closing splash_title_div
+    .splash_nav {
+      display: flex;
+      justify-content: space-around;
+      margin-left: auto;
+      margin-right: 8%;
+      padding-top: 3%;
+      .splah_nav_link {
+        color: $whitecolor;
+        margin: 0 20px;
+        // border: 1px solid black;
+      }
+    }
+  } // closing splash_title_div
 
-        // &__title-container {
-        //   margin: 0 auto;
-        //   height: 50%;
-        //   // width: 45rem;
-        //   // margin-top: -6rem;
-        // }
+  // &__title-container {
+  //   margin: 0 auto;
+  //   height: 50%;
+  //   // width: 45rem;
+  //   // margin-top: -6rem;
+  // }
 
-        // &__title {
-        //   text-align: center;
-        //   font-size: 3.25rem;
-        // }
+  // &__title {
+  //   text-align: center;
+  //   font-size: 3.25rem;
+  // }
 
-        .splash_main_div {
-          // background-color: lime;
-          display: flex;
-          width: 100%;
-          height: 85%;
+  .splash_main_div {
+    // background-color: lime;
+    display: flex;
+    width: 100%;
+    height: 85%;
 
-          .splash_main_left {
-            // background-color: red;
-            width: 50%;
-            padding-top: 20%;
-            padding-left: 5%;
+    .splash_main_left {
+      // background-color: red;
+      width: 50%;
+      padding-top: 20%;
+      padding-left: 5%;
+      margin-top: -12rem;
 
-            h2 {
-              // background-color: rebeccapurple;
-              color: $orange;
-              // padding-left: 10%;
-            }
+      h2 {
+        // background-color: rebeccapurple;
+        color: $orange;
+        // padding-left: 10%;
+      }
 
-            h3 {
-              // margin: 40% 0;
-              // padding-left: 20%;
-              text-align: left;
-              color: $whitecolor;
-            }
-          }
+      h3 {
+        // margin: 40% 0;
+        // padding-left: 20%;
+        text-align: left;
+        color: $whitecolor;
+      }
+    }
 
-          .splash_main_right {
-            // background-color: pink;
-            padding: 40px;
-            width: 50%;
-
-          }
-        }
-      } //closing splash
+    .splash_main_right {
+      // background-color: pink;
+      padding: 40px;
+      width: 50%;
+    }
+  }
+} //closing splash

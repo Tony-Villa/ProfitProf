@@ -3,12 +3,14 @@ import './GoalCard.scss';
 import Hawaii from '../../../assets/thumbnails/hawaii.png';
 import Car from '../../../assets/thumbnails/car.png';
 import Loan from '../../../assets/thumbnails/loan.png';
+import Computer from '../../../assets/thumbnails/computer.png';
 
 const GoalCard = ({ goal_subtype, description, current_amount, total_amount, monthly_cap }) => {
   const thumbnailPicker = {
     vacation: Hawaii,
     'loan payment': Loan,
     'car purchase': Car,
+    'other goal': Computer,
   };
 
   const getPercent = (current, total) => {
@@ -27,6 +29,7 @@ const GoalCard = ({ goal_subtype, description, current_amount, total_amount, mon
   //   };
 
   //   const remainingMonths = getRemainingMonths(current_amount, total_amount, monthly_cap);
+
   const randomNumber = Math.floor(Math.random() * 5) + 4;
   const currentPercent = getPercent(current_amount, total_amount);
 
@@ -47,10 +50,14 @@ const GoalCard = ({ goal_subtype, description, current_amount, total_amount, mon
             </p>
           </div>
           <div className="goal-card__months-left">
-            <p>{randomNumber} months to go!</p>
+            {current_amount < total_amount ? <p>{randomNumber} months to go!</p> : <p></p>}
           </div>
           <div className="goal-card__on-track">
-            <span className="subtitle">On Schedule</span>
+            {current_amount < total_amount ? (
+              <span className="subtitle">On Schedule</span>
+            ) : (
+              <span className="subtitle">Achieved Oct 2021</span>
+            )}
           </div>
         </div>
       </div>

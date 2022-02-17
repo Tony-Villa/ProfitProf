@@ -7,43 +7,16 @@ import './Goals.scss';
 import '../../components/dashboard/goalsSummary/GoalsSummary.scss';
 import GoalCard from '../../components/shared/GoalCard/GoalCard';
 import plus from '../../assets/icons/Pluse.png';
+import ModalGoal from '../../components/shared/ModalGoal/ModalGoal';
+import AddGoal from '../../components/shared/AddGoal/AddGoal';
+import { ReloadContext } from '../../Context/ReloadContext';
 
 const Goals = ({ setAuth }) => {
-  const [income, setIncome] = useState({});
-  const [expenses, setExpenses] = useState({});
   const [goals, setGoals] = useState({});
+  const [isOpen, setIsOpen] = useState(false);
+  const { isReaload, setIsReaload } = useContext(ReloadContext);
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
-
-  const getIncome = async () => {
-    try {
-      console.log('user + ', user.id);
-      const res = await fetch(`https://profitprof.herokuapp.com/v1/income/show/${user.id}`);
-      const parsedRes = await res.json();
-      const data = parsedRes.income;
-
-      console.log('income + ', data);
-
-      setIncome(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const getExpenses = async () => {
-    try {
-      console.log('user + ', user.id);
-      const res = await fetch(`https://profitprof.herokuapp.com/v1/expenses/show/${user.id}`);
-      const parsedRes = await res.json();
-      const data = parsedRes.expenses;
-
-      console.log('expenses + ', data);
-
-      setExpenses(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const getGoals = async () => {
     try {
@@ -76,15 +49,13 @@ const Goals = ({ setAuth }) => {
   };
 
   useEffect(() => {
-    getIncome();
-    getExpenses();
     getGoals();
     // console.log(income);
-  }, [user?.id]);
+  }, [user?.id, isReaload]);
 
   return (
     <div className="goals flex">
-      <div className="dashboard__nav mr-2">
+      <div className="dashboard__nav ">
         <DashNav logout={logout} />
       </div>
       <div className="goals__content flex">
@@ -99,6 +70,16 @@ const Goals = ({ setAuth }) => {
             </div>
             <div className="goals-sum__cards-container flex">
               {goals.length ? genGoalCards(goals) : <h4>loading...</h4>}
+            </div>
+            <div className="goals__modal-btn-container">
+              <button class="goals__open-modal-btn" onClick={() => setIsOpen(true)}></button>
+              {isOpen && (
+                <ModalGoal className="goals__modal-open" closeModal={setIsOpen}>
+                  <div className="goals__inner-form">
+                    <AddGoal closeModal={setIsOpen} />
+                  </div>
+                </ModalGoal>
+              )}
             </div>
           </div>
         </div>
