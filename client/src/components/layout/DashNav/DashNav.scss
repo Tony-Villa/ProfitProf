@@ -10,12 +10,16 @@
   text-decoration: none;
   @include flex(column, center, space-between);
 
-  a {
+  img {
     color: $whitecolor;
   }
-  a:hover {
+  img:hover {
     color: $gray3;
     opacity: 0.6;
+  }
+
+  li {
+    cursor: pointer;
   }
 
   &__logo-container {
