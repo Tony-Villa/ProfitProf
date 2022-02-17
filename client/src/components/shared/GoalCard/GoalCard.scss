@@ -4,12 +4,36 @@
   width: 23.5rem;
   height: 10.5rem;
   padding: get-spacing(6);
+  background-color: $whitecolor;
+  border-radius: get-size(4);
+  box-shadow: 4px 4px 14px 0 rgba(0, 0, 0, 0.1);
+  margin: 24px 61px 27px 0;
 
   &__left {
     width: 35%;
   }
 
   &__right {
-    width: 65%;
+    width: 62%;
+  }
+
+  &__content {
+    @include flex(column, center, flex-start);
+  }
+
+  &__progress-bar {
+    width: 80%;
+    height: 0.95rem;
+    margin: get-size(2) 0;
+    border-radius: get-size(4);
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: $gray1;
+  }
+
+  &__progress-fill {
+    height: 0.95rem;
+    border-radius: get-size(4);
+    box-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    background-color: $blue;
   }
 }
