@@ -37,7 +37,7 @@ const Dashboard = ({ setAuth }) => {
 
       console.log('expenses + ', data);
 
-      setIncome(data);
+      setExpenses(data);
     } catch (error) {
       console.log(error);
     }
@@ -88,7 +88,7 @@ const Dashboard = ({ setAuth }) => {
         </div>
         <div className="dashboard__expenses">
           <p>Expenses go here</p>
-          <PieChart />
+          <PieChart data={expenses}/>
         </div>
         <div className="dashboard__barGraph">
           <p>barGraph go here</p>
