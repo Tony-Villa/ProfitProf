@@ -7,11 +7,14 @@ import './Goals.scss';
 import '../../components/dashboard/goalsSummary/GoalsSummary.scss';
 import GoalCard from '../../components/shared/GoalCard/GoalCard';
 import plus from '../../assets/icons/Pluse.png';
+import ModalGoal from '../../components/shared/ModalGoal/ModalGoal';
+import AddGoal from '../../components/shared/AddGoal/AddGoal';
 
 const Goals = ({ setAuth }) => {
   const [income, setIncome] = useState({});
   const [expenses, setExpenses] = useState({});
   const [goals, setGoals] = useState({});
+  const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -100,6 +103,12 @@ const Goals = ({ setAuth }) => {
             <div className="goals-sum__cards-container flex">
               {goals.length ? genGoalCards(goals) : <h4>loading...</h4>}
             </div>
+            <button onClick={() => setIsOpen(true)}>Open Modal</button>
+            {isOpen && (
+              <ModalGoal closeModal={setIsOpen}>
+                <AddGoal />
+              </ModalGoal>
+            )}
           </div>
         </div>
         <div className="goals__bottom goals__container">
