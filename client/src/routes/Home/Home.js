@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import AuthForm from '../../components/auth/AuthForm/AuthForm';
 import { UserContext } from '../../Context/UserContext';
 import { Link } from 'react-router-dom';
+import "./Home.scss"
 
 const Home = ({ isUser, setAuth }) => {
   const { user } = useContext(UserContext);
