@@ -54,7 +54,7 @@ const BarGraph = () => {
         tickSize: 0,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "hello",
+        legend: "",
         legendPosition: "middle",
         legendOffset: 32,
         stroke: "#000"
