@@ -3,6 +3,7 @@
 .dashboard {
   height: 100%;
   width: 95vw;
+  overflow: hidden;
 
   &__summary {
     width: 100%;
