@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import PieChart from '../../components/dashboard/pieChart/PieChart';
+import SavingsSummary from '../../components/dashboard/savingsSummary/SavingsSummary';
 import DashNav from '../../components/layout/DashNav/DashNav';
 import { UserContext } from '../../Context/UserContext';
 import './Dashboard.scss';
@@ -36,7 +37,7 @@ const Dashboard = ({ setAuth }) => {
 
       console.log('expenses + ', data);
 
-      setIncome(data);
+      setExpenses(data);
     } catch (error) {
       console.log(error);
     }
@@ -51,7 +52,7 @@ const Dashboard = ({ setAuth }) => {
 
       console.log('goals + ', data);
 
-      setIncome(data);
+      setGoals(data);
     } catch (error) {
       console.log(error);
     }
@@ -80,14 +81,14 @@ const Dashboard = ({ setAuth }) => {
 
       <div className="dashboard__summary grid mt-1 mb-1">
         <div className="dashboard__savings">
-          <p>Savings go here</p>
+          <SavingsSummary income={income} />
         </div>
         <div className="dashboard__goals">
           <p>Goals go here</p>
         </div>
         <div className="dashboard__expenses">
           <p>Expenses go here</p>
-          <PieChart />
+          <PieChart data={expenses}/>
         </div>
         <div className="dashboard__barGraph">
           <p>barGraph go here</p>

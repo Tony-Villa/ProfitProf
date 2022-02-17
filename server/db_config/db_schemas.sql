@@ -59,4 +59,6 @@ CREATE TABLE goals (
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
+ALTER TABLE goals 
+ADD COLUMN current_amount INT DEFAULT 0;
 
