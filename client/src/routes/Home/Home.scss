@@ -4,6 +4,11 @@
         //home is the splash page//
         // background-color: red;
         height: 100%;
+        background: url("../../assets/background.png") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
 
         .splash_title_div {
           // background-color: gold;
@@ -16,8 +21,8 @@
             height: 100%;
             width: 50%;
             padding-top: 3%;
-            h1 {
-              font-size: 34px;
+
+            img {
               padding-left: 10%;
             }
           }
@@ -29,25 +34,24 @@
             margin-right: 8%;
             padding-top: 3%;
             .splah_nav_link {
+              color: $whitecolor;
               margin: 0 20px;
               // border: 1px solid black;
             }
           }
         } // closing splash_title_div
 
-        &__title-container {
-          margin: 0 auto;
-          width: 45rem;
-          height: 50%;
-          margin-top: -6rem;
-        }
+        // &__title-container {
+        //   margin: 0 auto;
+        //   height: 50%;
+        //   // width: 45rem;
+        //   // margin-top: -6rem;
+        // }
 
-        &__title {
-          text-align: center;
-          font-size: 3.25rem;
-        }
-
-        
+        // &__title {
+        //   text-align: center;
+        //   font-size: 3.25rem;
+        // }
 
         .splash_main_div {
           // background-color: lime;
@@ -58,11 +62,20 @@
           .splash_main_left {
             // background-color: red;
             width: 50%;
+            padding-top: 20%;
+            padding-left: 5%;
 
-            h1 {
-              margin: 40% 0;
-              padding-left: 20%;
+            h2 {
+              // background-color: rebeccapurple;
+              color: $orange;
+              // padding-left: 10%;
+            }
+
+            h3 {
+              // margin: 40% 0;
+              // padding-left: 20%;
               text-align: left;
+              color: $whitecolor;
             }
           }
 
