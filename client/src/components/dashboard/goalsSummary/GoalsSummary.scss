@@ -1,1 +1,8 @@
 @use '../../../scss/' as *;
+
+.goals-sum {
+  padding: get-spacing(12);
+  &__cards-container {
+    gap: get-size(10);
+  }
+}
