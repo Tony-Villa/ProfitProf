@@ -9,7 +9,7 @@ const Home = ({ isUser, setAuth }) => {
   console.log(user?.username);
   console.log(isUser);
   return (
-    <div className="home">
+    <div className="splash">
       <div className="splash_title_div">
         <div className="splash_title">
           <h1>ProfitProf</h1>
@@ -30,7 +30,9 @@ const Home = ({ isUser, setAuth }) => {
 
       <div className="splash_main_div">
         <div className="splash_main_left">
-          <h1>Managing financial goals has never been easier</h1>
+          <div className="splash__title-container">
+            <h1 className="splash__title">Managing financial goals has never been easier</h1>
+          </div>
         </div>
 
         <div className="splash_main_right">
