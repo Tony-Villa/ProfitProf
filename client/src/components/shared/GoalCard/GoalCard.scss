@@ -47,4 +47,17 @@
     border-radius: 5px;
     margin-top: 0.5rem;
   }
+
+  &__options {
+    width: 100%;
+  }
+
+  &__btn-delete {
+    margin: 0 auto;
+    height: auto;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
 }
