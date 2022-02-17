@@ -71,12 +71,16 @@ const Goals = ({ setAuth }) => {
             <div className="goals-sum__cards-container flex">
               {goals.length ? genGoalCards(goals) : <h4>loading...</h4>}
             </div>
-            <button onClick={() => setIsOpen(true)}>Open Modal</button>
-            {isOpen && (
-              <ModalGoal closeModal={setIsOpen}>
-                <AddGoal />
-              </ModalGoal>
-            )}
+            <div className="goals__modal-btn-container">
+              <button class="goals__open-modal-btn" onClick={() => setIsOpen(true)}></button>
+              {isOpen && (
+                <ModalGoal className="goals__modal-open" closeModal={setIsOpen}>
+                  <div className="goals__inner-form">
+                    <AddGoal closeModal={setIsOpen} />
+                  </div>
+                </ModalGoal>
+              )}
+            </div>
           </div>
         </div>
         <div className="goals__bottom goals__container">

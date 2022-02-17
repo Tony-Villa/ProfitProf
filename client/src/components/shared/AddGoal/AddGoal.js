@@ -4,7 +4,7 @@ import { ReloadContext } from '../../../Context/ReloadContext';
 import { UserContext } from '../../../Context/UserContext';
 import './AddGoal.scss';
 
-const AddGoal = ({}) => {
+const AddGoal = ({ closeModal }) => {
   const { isReload, setIsReload } = useContext(ReloadContext);
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
@@ -50,84 +50,155 @@ const AddGoal = ({}) => {
 
   return (
     <div className="goal-form">
-      <form className="goal-form__form flex" onSubmit={onSubmitForm} autoComplete="off">
-        <input
-          className="input-form"
-          type="hidden"
-          name="user_id"
-          placeholder="user_id"
-          value={user_id}
-          onChange={(e) => onChange(e)}
-        />
-        <input
-          className="input-form"
-          type="hidden"
-          name="due_date"
-          placeholder="due_date"
-          value={due_date}
-          onChange={(e) => onChange(e)}
-        />
-        <input
-          className="input-form"
-          type="hidden"
-          name="goal_type"
-          placeholder="goal_type"
-          value={goal_type}
-          onChange={(e) => onChange(e)}
-        />
-        <input
-          className="input-form"
-          type="hidden"
-          name="goal_subtype"
-          placeholder="goal_subtype"
-          value={goal_subtype}
-          onChange={(e) => onChange(e)}
-        />
-        <select>
-          <option value="credit card payment">Pay Credit Card</option>
-          <option value="vacation">Vacation</option>
-          <option value="other goal">Other Goal</option>
-        </select>
-        <label for="total_amount">Amount Needed</label>
-        <input
-          className="input-form"
-          type="number"
-          name="total_amount"
-          placeholder="250"
-          value={total_amount}
-          onChange={(e) => onChange(e)}
-        />
-        <label for="monthly_cap">Monthly Contribution</label>
-        <input
-          className="input-form"
-          type="number"
-          name="monthly_cap"
-          placeholder="250"
-          value={monthly_cap}
-          onChange={(e) => onChange(e)}
-        />
-        <label for="monthly_cap">Initial Investment</label>
-        <input
-          className="input-form"
-          type="number"
-          name="current_amount"
-          placeholder="current_amount"
-          value={current_amount}
-          onChange={(e) => onChange(e)}
-        />
+      <div className="goal-form__titles"></div>
+      <button
+        className="goal-form__close-btn"
+        onClick={() => {
+          closeModal(false);
+        }}
+      >
+        X
+      </button>
 
-        <label for="monthly_cap">Goal Title</label>
-        <input
-          className="input-form"
-          type="text"
-          name="description"
-          placeholder="Buy new shoes"
-          value={description}
-          onChange={(e) => onChange(e)}
-        />
+      <h5>Set A Goal</h5>
+      <hr />
+      <div className="goal-form__content ">
+        <form className="goal-form__form flex" onSubmit={onSubmitForm} autoComplete="off">
+          <div className="goal-form__left flex">
+            <div className="full-width">
+              <label htmlFor="">Terms</label>
+            </div>
+            <select className="goal-form__select-lg">
+              <option value="short term">Short Term</option>
+              <option value="mid term">Mid Term</option>
+              <option value="long term">Long Term</option>
+            </select>
 
-        <button className="btn submit btn-search mt-1 mb-1">Submit</button>
-      </form>
+            <div className="full-width">
+              <label htmlFor="">Choose a goal</label>
+            </div>
+            <select className="goal-form__select-lg">
+              <option value="credit card payment">Pay Credit Card</option>
+              <option value="vacation">Vacation</option>
+              <option value="other goal">Other Goal</option>
+            </select>
+            <div className="goal-form__goal-title-container">
+              <label for="monthly_cap">Goal Title</label>
+              <input
+                className="input-form"
+                type="text"
+                name="description"
+                placeholder="Buy new shoes"
+                value={description}
+                onChange={(e) => onChange(e)}
+              />
+            </div>
+          </div>
+          <div className="goal-form__right flex">
+            <div className="goal-form__date-select flex">
+              <select className="goal-form__select-sm">
+                <option value="">Jan</option>
+                <option value="">Feb</option>
+                <option value="">Mar</option>
+                <option value="">Apr</option>
+                <option value="">May</option>
+                <option value="">Jun</option>
+                <option value="">Jul</option>
+                <option value="">Aug</option>
+                <option value="">Sep</option>
+                <option value="">Oct</option>
+                <option value="">Nov</option>
+                <option value="">Dec</option>
+              </select>
+
+              <select className="goal-form__select-sm">
+                <option value="">2022</option>
+                <option value="">2023</option>
+                <option value="">2024</option>
+                <option value="">2025</option>
+                <option value="">2026</option>
+              </select>
+            </div>
+
+            <div className="goal-form__initial-amount flex mb-1">
+              <div className="input-label flex">
+                <label for="monthly_cap">Monthly Contribution</label>
+                <input
+                  className="input-form-sm"
+                  type="number"
+                  name="monthly_cap"
+                  placeholder="250"
+                  value={monthly_cap}
+                  onChange={(e) => onChange(e)}
+                />
+              </div>
+
+              <div className="input-label flex">
+                <label for="monthly_cap">Initial Investment</label>
+                <input
+                  className="input-form-sm"
+                  type="number"
+                  name="current_amount"
+                  placeholder="current_amount"
+                  value={current_amount}
+                  onChange={(e) => onChange(e)}
+                />
+              </div>
+            </div>
+
+            <div className=" input-label amount-needed-container flex">
+              <div className="full-width">
+                <label for="total_amount">Amount Needed</label>
+              </div>
+              <input
+                className="input-form"
+                type="number"
+                name="total_amount"
+                placeholder="250"
+                value={total_amount}
+                onChange={(e) => onChange(e)}
+              />
+            </div>
+
+            <div className="btn-container">
+              <button className="btn-submit-form mt-2 mb-1">Submit</button>
+            </div>
+          </div>
+
+          <input
+            className="input-form"
+            type="hidden"
+            name="user_id"
+            placeholder="user_id"
+            value={user_id}
+            onChange={(e) => onChange(e)}
+          />
+          <input
+            className="input-form"
+            type="hidden"
+            name="due_date"
+            placeholder="due_date"
+            value={due_date}
+            onChange={(e) => onChange(e)}
+          />
+          <input
+            className="input-form"
+            type="hidden"
+            name="goal_type"
+            placeholder="goal_type"
+            value={goal_type}
+            onChange={(e) => onChange(e)}
+          />
+          <input
+            className="input-form"
+            type="hidden"
+            name="goal_subtype"
+            placeholder="goal_subtype"
+            value={goal_subtype}
+            onChange={(e) => onChange(e)}
+          />
+        </form>
+      </div>
     </div>
   );
 };
