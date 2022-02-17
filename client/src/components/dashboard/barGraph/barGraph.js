@@ -11,8 +11,6 @@ const BarGraph = () => {
         textAlign: "center"
       };
       
-     
-
       const data = [
         {
           map: "July",
@@ -109,12 +107,17 @@ const BarGraph = () => {
             height={height} 
             // rx={Math.min(w, height) / 6} 
             fill={color}
+          
             />
         );
       };
 
+      // Required to override default colors in the nivobar
+      const colors = { 'nonfixed': '#8342e9'/*purple*/, 'fixed': '#fba9d3'/*pink*/, 'savings': '#febd30'/*orange*/ }
+      const getColor = bar => colors[bar.id]
       
-      
+
+
       const colorBy = ({ id }) => (id === "nonfixed" ? "#FBA9D3" : id === "fixed" ? "#8342E9" : "#FEBD30");
       
       const legends = [
@@ -147,7 +150,7 @@ const BarGraph = () => {
     <div className='incomeexpenses'>
         <h5>Income / Expenses</h5>
         <div className="incomeexpenses_styles" style={styles}>
-            <Bar className="incomeexpenses_bar"
+            <Bar
                 width={600}
                 height={400}
                 margin={{ top: 60, right: 120, bottom: 60, left: 80 }}
@@ -164,6 +167,7 @@ const BarGraph = () => {
                 theme={theme}
                 legends={legends}
                 barComponent={CustomBarComponent} /* needed for individual bar properties */
+                colors={getColor} /*needed for bargraph color override*/
             />
             
         </div>
