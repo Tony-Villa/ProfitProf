@@ -1,6 +1,8 @@
 @use '../../scss/' as *;
 
 .goals {
+  position: relative;
+
   &__content {
     height: 100vh;
     width: 95vw;
@@ -18,6 +20,24 @@
   &__top {
     height: 60%;
     width: 95%;
+  }
+
+  &__modal-btn-container {
+    position: absolute;
+    top: 15%;
+    left: 9%;
+    height: 150px;
+    width: 300px;
+
+    button {
+      height: 100%;
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      display: block;
+      cursor: pointer;
+    }
   }
 
   &__bottom {

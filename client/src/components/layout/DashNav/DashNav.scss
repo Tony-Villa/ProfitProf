@@ -2,11 +2,59 @@
 
 .dash-nav {
   height: 100%;
-  width: 7rem;
+  width: 7.5rem;
   background-color: $darkpurple;
-  border-radius: 0 -1rem -1rem 0; /*TL TR BR BL*/
+  position: relative;
+  font-size: 12px;
+  color: $whitecolor;
+  text-decoration: none;
+  @include flex(column, center, space-between);
+
+  img {
+    color: $whitecolor;
+  }
+  img:hover {
+    color: $gray3;
+    opacity: 0.6;
+  }
+
+  li {
+    cursor: pointer;
+  }
+
+  &__logo-container {
+    margin-left: get-spacing(8);
+    margin-bottom: 1rem;
+  }
 
   &__neg-border {
-    border: 2px solid yellow;
+    position: absolute;
+    // border: 2px solid yellow;
+    height: 100%;
+    width: 20%;
+    right: 0;
+    border-radius: 1rem 0 0 1rem;
+    background-color: $whitecolor;
+  }
+
+  &__link-container {
+    height: 85%;
+    padding: get-spacing(4);
+    @include flex(column, space-between, space-between);
+  }
+
+  &__func-links {
+    height: 55%;
+    // border: 2px solid pink;
+    margin-top: 1rem;
+    @include flex(column, space-between, space-between);
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: -1.15rem;
+    justify-self: flex-end;
   }
 }
