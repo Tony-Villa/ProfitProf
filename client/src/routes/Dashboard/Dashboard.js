@@ -78,7 +78,7 @@ const Dashboard = ({ setAuth }) => {
       </div>
       {/* {user?.username && <h1>Welcome, {user.first_name}</h1>} */}
 
-      <div className="dasboard__summary grid">
+      <div className="dashboard__summary grid mt-1 mb-1">
         <div className="dashboard__savings">
           <p>Savings go here</p>
         </div>
