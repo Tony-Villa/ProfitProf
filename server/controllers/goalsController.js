@@ -14,11 +14,12 @@ const showGoals = async (req, res) => {
 
 const addGoals = async (req, res, next) => {
   try {
-    const { user_id, goal_type, goal_subtype, description, total_amount, monthly_cap, due_date } = req.body;
+    const { user_id, goal_type, goal_subtype, description, total_amount, monthly_cap, current_amount, due_date } =
+      req.body;
 
     const newExpense = await pool.query(
-      'INSERT INTO goals (user_id, goal_type, goal_subtype, description, total_amount, monthly_cap, due_date) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *',
-      [user_id, goal_type, goal_subtype, description, total_amount, monthly_cap, due_date]
+      'INSERT INTO goals (user_id, goal_type, goal_subtype, description, total_amount, monthly_cap,current_amount, due_date) VALUES ($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *',
+      [user_id, goal_type, goal_subtype, description, total_amount, monthly_cap, current_amount, due_date]
     );
 
     res.json({ expense: newExpense.rows[0] });

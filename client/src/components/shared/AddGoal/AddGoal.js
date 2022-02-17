@@ -10,11 +10,11 @@ const AddGoal = ({}) => {
   const [inputs, setInputs] = useState({
     user_id: user.id,
     goal_type: 'short term',
-    goal_subtype: 'vacation',
+    goal_subtype: 'other goal',
     description: '',
-    total_amount: 500,
+    total_amount: 4000,
     monthly_cap: 250,
-    current_amount: 100,
+    current_amount: 250,
     due_date: '2022-09-25',
   });
 
@@ -27,7 +27,7 @@ const AddGoal = ({}) => {
   const onSubmitForm = async (e) => {
     e.preventDefault();
 
-    const body = { user_id, goal_type, goal_subtype, description, total_amount, monthly_cap, due_date };
+    const body = { user_id, goal_type, goal_subtype, description, total_amount, monthly_cap, current_amount, due_date };
 
     try {
       const res = await fetch(`https://profitprof.herokuapp.com/v1/goals/`, {
@@ -97,7 +97,7 @@ const AddGoal = ({}) => {
           className="input-form"
           type="text"
           name="toal_amount"
-          placeholder="1500"
+          placeholder="4000"
           value={total_amount}
           onChange={(e) => onChange(e)}
         />
