@@ -4,6 +4,7 @@ import GoalsSummary from '../../components/dashboard/goalsSummary/GoalsSummary';
 import PieChart from '../../components/dashboard/pieChart/PieChart';
 import SavingsSummary from '../../components/dashboard/savingsSummary/SavingsSummary';
 import DashNav from '../../components/layout/DashNav/DashNav';
+import BarGraph from '../../components/dashboard/barGraph/barGraph';
 import { UserContext } from '../../Context/UserContext';
 import './Dashboard.scss';
 
@@ -90,7 +91,7 @@ const Dashboard = ({ setAuth }) => {
           <PieChart data={expenses}/>
         </div>
         <div className="dashboard__barGraph">
-          <p>this is for bargraph</p>
+          <BarGraph />
         </div>
       </div>
     </div>
