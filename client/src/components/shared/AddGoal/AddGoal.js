@@ -50,18 +50,108 @@ const AddGoal = ({ closeModal }) => {
 
   return (
     <div className="goal-form">
+      <div className="goal-form__titles"></div>
+      <button
+        className="goal-form__close-btn"
+        onClick={() => {
+          closeModal(false);
+        }}
+      >
+        X
+      </button>
+
+      <h5>Set A Goal</h5>
+      <hr />
       <div className="goal-form__content ">
-        <button
-          className="modal__close-btn"
-          onClick={() => {
-            closeModal(false);
-          }}
-        >
-          X
-        </button>
         <form className="goal-form__form flex" onSubmit={onSubmitForm} autoComplete="off">
-          <div className="goal-form__left"></div>
-          <div className="goal-form__right"></div>
+          <div className="goal-form__left flex">
+            <select className="goal-form__select-lg">
+              <option value="short term">Short Term</option>
+              <option value="mid term">Mid Term</option>
+              <option value="long term">Long Term</option>
+            </select>
+
+            <select className="goal-form__select-lg">
+              <option value="credit card payment">Pay Credit Card</option>
+              <option value="vacation">Vacation</option>
+              <option value="other goal">Other Goal</option>
+            </select>
+
+            <label for="monthly_cap">Goal Title</label>
+            <input
+              className="input-form"
+              type="text"
+              name="description"
+              placeholder="Buy new shoes"
+              value={description}
+              onChange={(e) => onChange(e)}
+            />
+          </div>
+          <div className="goal-form__right flex">
+            <div className="goal-form__date-select flex">
+              <select className="goal-form__select-sm">
+                <option value="">Jan</option>
+                <option value="">Feb</option>
+                <option value="">Mar</option>
+                <option value="">Apr</option>
+                <option value="">May</option>
+                <option value="">Jun</option>
+                <option value="">Jul</option>
+                <option value="">Aug</option>
+                <option value="">Sep</option>
+                <option value="">Oct</option>
+                <option value="">Nov</option>
+                <option value="">Dec</option>
+              </select>
+
+              <select className="goal-form__select-sm">
+                <option value="">2022</option>
+                <option value="">2023</option>
+                <option value="">2024</option>
+                <option value="">2025</option>
+                <option value="">2026</option>
+              </select>
+            </div>
+
+            <div className="goal-form__initial-amount flex mb-1">
+              <div className="input-label flex">
+                <label for="monthly_cap">Monthly Contribution</label>
+                <input
+                  className="input-form-sm"
+                  type="number"
+                  name="monthly_cap"
+                  placeholder="250"
+                  value={monthly_cap}
+                  onChange={(e) => onChange(e)}
+                />
+              </div>
+
+              <div className="input-label flex">
+                <label for="monthly_cap">Initial Investment</label>
+                <input
+                  className="input-form-sm"
+                  type="number"
+                  name="current_amount"
+                  placeholder="current_amount"
+                  value={current_amount}
+                  onChange={(e) => onChange(e)}
+                />
+              </div>
+            </div>
+
+            <label for="total_amount">Amount Needed</label>
+            <input
+              className="input-form"
+              type="number"
+              name="total_amount"
+              placeholder="250"
+              value={total_amount}
+              onChange={(e) => onChange(e)}
+            />
+
+            <button className="btn submit btn-search mt-1 mb-1">Submit</button>
+          </div>
+
           <input
             className="input-form"
             type="hidden"
@@ -94,50 +184,6 @@ const AddGoal = ({ closeModal }) => {
             value={goal_subtype}
             onChange={(e) => onChange(e)}
           />
-          <select>
-            <option value="credit card payment">Pay Credit Card</option>
-            <option value="vacation">Vacation</option>
-            <option value="other goal">Other Goal</option>
-          </select>
-          <label for="total_amount">Amount Needed</label>
-          <input
-            className="input-form"
-            type="number"
-            name="total_amount"
-            placeholder="250"
-            value={total_amount}
-            onChange={(e) => onChange(e)}
-          />
-          <label for="monthly_cap">Monthly Contribution</label>
-          <input
-            className="input-form"
-            type="number"
-            name="monthly_cap"
-            placeholder="250"
-            value={monthly_cap}
-            onChange={(e) => onChange(e)}
-          />
-          <label for="monthly_cap">Initial Investment</label>
-          <input
-            className="input-form"
-            type="number"
-            name="current_amount"
-            placeholder="current_amount"
-            value={current_amount}
-            onChange={(e) => onChange(e)}
-          />
-
-          <label for="monthly_cap">Goal Title</label>
-          <input
-            className="input-form"
-            type="text"
-            name="description"
-            placeholder="Buy new shoes"
-            value={description}
-            onChange={(e) => onChange(e)}
-          />
-
-          <button className="btn submit btn-search mt-1 mb-1">Submit</button>
         </form>
       </div>
     </div>
