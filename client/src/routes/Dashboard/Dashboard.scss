@@ -2,18 +2,38 @@
 
 .dashboard {
   height: 100%;
-  width: 90vw;
+  width: 95vw;
 
-  .dashboard__summary {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    outline: 3px solid white;
+  &__summary {
+    width: 100%;
+    grid-template-columns: 1fr 1fr 0.5fr 0.5fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 16px 16px;
+    grid-template-areas:
+      'one one one two two two two'
+      'three three three two two two two'
+      'four four four four four four four'
+      'four four four four four four four';
+  }
 
-    &__savings {
-      background-color: white;
-      margin-left: 1rem;
-    }
+  &__savings {
+    grid-area: one;
+    background-color: pink;
+    border-radius: get-spacing(4);
+  }
+  &__goals {
+    grid-area: two;
+    background-color: blue;
+    border-radius: get-spacing(4);
+  }
+  &__expenses {
+    grid-area: three;
+    background-color: red;
+    border-radius: get-spacing(4);
+  }
+  &__barGraph {
+    grid-area: four;
+    background-color: lightyellow;
+    border-radius: get-spacing(4);
   }
 }
