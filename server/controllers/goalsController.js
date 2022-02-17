@@ -17,7 +17,7 @@ const addGoals = async (req, res, next) => {
     const { user_id, goal_type, goal_subtype, description, total_amount, monthly_cap, due_date } = req.body;
 
     const newExpense = await pool.query(
-      'INSERT INTO goals (user_id, goal_type, goal_subtype, description, total_amount, monthly_cap, due_date) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *',
+      'INSERT INTO goals (user_id, goal_type, goal_subtype, description, total_amount, monthly_cap, due_datet) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *',
       [user_id, goal_type, goal_subtype, description, total_amount, monthly_cap, due_date]
     );
 
@@ -32,11 +32,11 @@ const editGoal = async (req, res) => {
   try {
     const { id } = req.params;
 
-    const { goal_type, goal_subtype, description, total_amount, monthly_cap, due_date } = req.body;
+    const { goal_type, goal_subtype, description, total_amount, monthly_cap, due_date, current_amount } = req.body;
 
     const updatedGoal = await pool.query(
-      'UPDATE goals SET goal_type = $1, goal_subtype = $2, description = $3, total_amount = $4, monthly_cap = $5, due_date = $6 WHERE id = $7',
-      [goal_type, goal_subtype, description, total_amount, monthly_cap, due_date, id]
+      'UPDATE goals SET goal_type = $1, goal_subtype = $2, description = $3, total_amount = $4, monthly_cap = $5, due_date = $6, current_amount = $7 WHERE id = $8',
+      [goal_type, goal_subtype, description, total_amount, monthly_cap, due_date, current_amount, id]
     );
 
     res.status(200).json('Goal was updated!');
