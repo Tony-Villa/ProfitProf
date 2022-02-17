@@ -1,6 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import PieChart from '../../components/dashboard/pieChart/PieChart';
+import DashNav from '../../components/layout/DashNav/DashNav';
 import { UserContext } from '../../Context/UserContext';
+import './Dashboard.scss';
 
 const Dashboard = ({ setAuth }) => {
   const [income, setIncome] = useState({});
@@ -24,6 +27,36 @@ const Dashboard = ({ setAuth }) => {
     }
   };
 
+  const getExpenses = async () => {
+    try {
+      console.log('user + ', user.id);
+      const res = await fetch(`https://profitprof.herokuapp.com/v1/expenses/show/${user.id}`);
+      const parsedRes = await res.json();
+      const data = parsedRes.expenses;
+
+      console.log('expenses + ', data);
+
+      setIncome(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const getGoals = async () => {
+    try {
+      console.log('user + ', user.id);
+      const res = await fetch(`https://profitprof.herokuapp.com/v1/goals/show/${user.id}`);
+      const parsedRes = await res.json();
+      const data = parsedRes.goals;
+
+      console.log('goals + ', data);
+
+      setIncome(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const logout = (e) => {
     e.preventDefault();
     localStorage.removeItem('token');
@@ -32,19 +65,33 @@ const Dashboard = ({ setAuth }) => {
   };
 
   useEffect(() => {
-    if (user?.id) {
-      getIncome();
-      console.log(income);
-    }
+    getIncome();
+    getExpenses();
+    getGoals();
+    // console.log(income);
   }, [user?.id]);
 
   return (
-    <div className="dashboard">
-      {user?.username && <h1>Welcome, {user.first_name}</h1>}
+    <div className="dashboard flex">
+      <div className="dashboard__nav mr-2">
+        <DashNav logout={logout} />
+      </div>
+      {/* {user?.username && <h1>Welcome, {user.first_name}</h1>} */}
 
-      {user?.username && <button onClick={(e) => logout(e)}>Log Out</button>}
-      <div>
-        <p>data goes here</p>
+      <div className="dashboard__summary grid mt-1 mb-1">
+        <div className="dashboard__savings">
+          <p>Savings go here</p>
+        </div>
+        <div className="dashboard__goals">
+          <p>Goals go here</p>
+        </div>
+        <div className="dashboard__expenses">
+          <p>Expenses go here</p>
+          <PieChart />
+        </div>
+        <div className="dashboard__barGraph">
+          <p>barGraph go here</p>
+        </div>
       </div>
     </div>
   );
