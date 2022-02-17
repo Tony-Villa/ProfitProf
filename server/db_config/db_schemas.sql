@@ -36,6 +36,9 @@ CREATE TABLE income (
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
+ALTER TABLE income 
+ADD COLUMN total_saved INT DEFAULT 0;
+
 -- GOALS
 
 -- add total amount && monthly cap && due date
@@ -55,3 +58,5 @@ CREATE TABLE goals (
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
+
+

@@ -1,0 +1,27 @@
+@use '../abstracts/' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Hind&family=Mukta:wght@700&family=Roboto&display=swap');
+
+/* 
+font-family: 'Hind', sans-serif;
+font-family: 'Mukta', sans-serif;
+font-family: 'Roboto', sans-serif;
+*/
+
+$contentFont: 'Roboto', sans-serif;
+
+html {
+  font-family: $contentFont;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-thin {
+  font-weight: lighter;
+}

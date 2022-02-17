@@ -1,0 +1,105 @@
+/*#region font*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*#endregion font*/
+
+/*#region Variables*/
+$blackcolor: #1c0a00;
+$whitecolor: #ffebe4;
+
+$primarylight: #40b159;
+$primarylightmed: #1ea43c;
+$primarymed: #0d8628; /* primary */
+$primarydarkmed: #006c18;
+$primarydark: #004c11;
+
+$secondarylight: #ea6254;
+$secondarylightmed: #d93827;
+$secondarymed: #b12011; /* secondary */
+$secondarydarkmed: #8f0e00;
+$secondarydark: #650a00;
+
+$tertiarylight: #db9fcf;
+$tertiarylightmed: #9c1c84;
+$tertiarymed: #993386; /* tertiary */
+$tertiarydarkmed: #670053;
+$tertiarydark: #48003a;
+
+$quarternarylight: #eebf78;
+$quarternarylightmed: #d89638;
+$quarternarymed: #b17011; /* quarternary */
+$quarternarydarkmed: #3e0022;
+$quarternarydark: #210600;
+/*#region mixins*/
+
+/*#endregion mixins*/
+@mixin light-on-dark-1 {
+  color: $whitecolor;
+  background-color: $blackcolor;
+}
+
+@mixin light-on-dark-purple {
+  color: $primarylight;
+  background-color: $blackcolor;
+}
+
+@mixin light-on-dark-gold {
+  color: $secondarylight;
+  background-color: $secondarydark;
+}
+
+@mixin light-on-dark-magenta {
+  color: $tertiarylight;
+  background-color: $tertiarydark;
+}
+
+@mixin light-on-dark-lime {
+  color: $quarternarylight;
+  background-color: $quarternarydark;
+}
+
+@mixin dark-on-light {
+  color: $whitecolor;
+  background-color: $blackcolor;
+}
+
+@mixin dark-on-light-purple {
+  color: $primarydark;
+  background-color: $primarylight;
+}
+
+@mixin dark-on-light-gold {
+  color: $secondarydark;
+  background-color: $secondarylight;
+}
+
+@mixin dark-on-light-magenta {
+  color: $tertiarydark;
+  background-color: $tertiarylight;
+}
+
+@mixin dark-on-light-lime {
+  color: $quarternarydark;
+  background-color: $quarternarylight;
+}
+
+/*#endregion Variables*/
+
+$bgColor: #1c1c1c;
+
+$textColor: #eeeeee;
+
+$accentColor: #e41f7b;
+
+hr {
+  width: 90%;
+  margin-top: 7rem;
+  height: 1px;
+}

@@ -1,14 +1,9 @@
-import './reset.scss';
-import './variables.scss';
-import './app.scss';
-import './media.scss';
-
-
 import AuthForm from './components/auth/AuthForm/AuthForm';
 import { UserContext } from './Context/UserContext';
 import { useEffect, useMemo, useState } from 'react';
 import AppRoutes from './routes/config/Routes';
 import Navbar from './components/layout/Navbar/Navbar';
+import './app.scss';
 
 function App() {
   const [isUser, setIsUser] = useState(false);
@@ -63,7 +58,6 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={value}>
-        {user?.username && <Navbar />}
         <AppRoutes setAuth={setAuth} isUser={isUser} />
       </UserContext.Provider>
     </div>
