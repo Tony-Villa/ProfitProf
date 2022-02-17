@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './GoalCard.scss';
 import Hawaii from '../../../assets/thumbnails/hawaii.png';
 import Car from '../../../assets/thumbnails/car.png';
 import Loan from '../../../assets/thumbnails/loan.png';
 import Computer from '../../../assets/thumbnails/computer.png';
+import Trash from '../../../assets/icons/trash.png';
 
-const GoalCard = ({ goal_subtype, description, current_amount, total_amount, monthly_cap }) => {
+const GoalCard = ({ goal_subtype, description, current_amount, total_amount, monthly_cap, id, deleteReview }) => {
+  const [currId, setCurrID] = useState('0');
+
   const thumbnailPicker = {
     vacation: Hawaii,
     'loan payment': Loan,
@@ -60,7 +63,9 @@ const GoalCard = ({ goal_subtype, description, current_amount, total_amount, mon
                 <span className="subtitle">Achieved Oct 2021</span>
               )}
             </div>
-            <button>trash</button>
+            {/* <button className="goal-card__btn-delete" onClick={deleteReview(currId)}>
+              <img src={Trash} alt="" />
+            </button> */}
           </div>
         </div>
       </div>
