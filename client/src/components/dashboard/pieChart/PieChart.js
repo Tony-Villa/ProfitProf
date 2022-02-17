@@ -2,7 +2,12 @@ import React from 'react';
 import { ResponsivePie } from "@nivo/pie";
 
 const PieChart = (props) => {
-  console.log(props.data);
+    if(props.data[0]?.id){
+      console.log(props.data[0].description);
+    }
+    else {
+      console.log("No data");
+    }
 
   //==========================
   const margin = { top: 20, right: 150, bottom: 20, left: 20 };
@@ -36,11 +41,11 @@ const PieChart = (props) => {
       fontSize: 24
     }
   };
-  // if(props.data[0]?.expense_type){
-  //   const data1 = props.data.map((expense_type, value, idx) => 
+  // if(props.data[0]?.id){
+  //   const data1 = props.data.map((description, expense_type, value) => 
   //     {
   //       return {
-  //         id: idx,
+  //         id: description,
   //         label: expense_type,
   //         value: value,
   //       }
