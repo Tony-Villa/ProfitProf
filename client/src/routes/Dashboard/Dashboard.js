@@ -37,7 +37,7 @@ const Dashboard = ({ setAuth }) => {
 
       console.log('expenses + ', data);
 
-      setIncome(data);
+      setExpenses(data);
     } catch (error) {
       console.log(error);
     }
@@ -52,7 +52,7 @@ const Dashboard = ({ setAuth }) => {
 
       console.log('goals + ', data);
 
-      setIncome(data);
+      setGoals(data);
     } catch (error) {
       console.log(error);
     }
