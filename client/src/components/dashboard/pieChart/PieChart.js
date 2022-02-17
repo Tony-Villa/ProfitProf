@@ -6,7 +6,7 @@ const PieChart = (props) => {
   const [chartData, setChartData] = useState([]);
 
   //==========================
-  const margin = { top: 20, right: 150, bottom: 20, left: 20 };
+  const margin = { top: 20, right: 150, bottom: 20, left: 50 };
 
   const styles = {
     root: {
@@ -14,7 +14,7 @@ const PieChart = (props) => {
       textAlign: 'center',
       position: 'relative',
       width: 400,
-      height: 300,
+      height: 250,
     },
     overlay: {
       position: 'absolute',
@@ -108,7 +108,7 @@ const PieChart = (props) => {
   return (
     <div className="pie-chart">
       <h5>Fixed Expenses</h5>
-      <div style={styles.root}>
+      <div className="pie-chart__chart" style={styles.root}>
         <ResponsivePie
           margin={margin}
           data={chartData}
