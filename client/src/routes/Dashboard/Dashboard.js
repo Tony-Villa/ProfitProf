@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import PieChart from '../../components/dashboard/pieChart/PieChart';
 import DashNav from '../../components/layout/DashNav/DashNav';
 import { UserContext } from '../../Context/UserContext';
 import './Dashboard.scss';
@@ -86,6 +87,7 @@ const Dashboard = ({ setAuth }) => {
         </div>
         <div className="dashboard__expenses">
           <p>Expenses go here</p>
+          <PieChart />
         </div>
         <div className="dashboard__barGraph">
           <p>barGraph go here</p>
