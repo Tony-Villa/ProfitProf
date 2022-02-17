@@ -1,0 +1,12 @@
+@use '../../../scss/' as *;
+
+.dash-nav {
+  height: 100%;
+  width: 7rem;
+  background-color: $darkpurple;
+  border-radius: 0 -1rem -1rem 0; /*TL TR BR BL*/
+
+  &__neg-border {
+    border: 2px solid yellow;
+  }
+}

@@ -1,0 +1,7 @@
+@use '../../../scss/' as *;
+
+.goal-form {
+  &__form {
+    @include flex(column, center, center);
+  }
+}
