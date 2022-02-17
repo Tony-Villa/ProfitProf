@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Bar } from "@nivo/bar"; 
+import "./barGraph.scss";
 
 const BarGraph = () => {
+
+    const [totalincome, setTotalincome] = useState(6600)
+
     const styles = {
         fontFamily: "sans-serif",
         textAlign: "center"
@@ -47,19 +51,20 @@ const BarGraph = () => {
       ];
       
       const axisBottom = {
-        tickSize: 5,
+        tickSize: 0,
         tickPadding: 5,
         tickRotation: 0,
         legend: "",
         legendPosition: "middle",
-        legendOffset: 32
+        legendOffset: 32,
+        stroke: "#000"
       };
       
       const axisLeft = {
-        tickSize: 5,
+        tickSize: 0,
         tickPadding: 5,
         tickRotation: 0,
-        legend: "Currency ($)",
+        // legend: "Amount",
         legendPosition: "middle",
         legendOffset: -40
       };
@@ -67,7 +72,7 @@ const BarGraph = () => {
       const theme = {
         axis: {
           fontSize: "14px",
-          tickColor: "#eee",
+          // tickColor: "#eee",
           ticks: {
             line: {
               stroke: "#555555"
@@ -84,11 +89,38 @@ const BarGraph = () => {
         },
         grid: {
           line: {
-            stroke: "#555555"
+            // stroke: "f5f5f585",
+            // stroke: "#000",
           }
         }
+        
       };
+
+      // This is needed for adjusting the dimensions of each bar in the graph. Needed to call "custombarcomponent" in the main return//
+      const BAR_MAX_WIDTH = 20;
       
+      const CustomBarComponent = ({ bar: { x, y, width, height, color } }) => {
+        const w = width > BAR_MAX_WIDTH ? BAR_MAX_WIDTH : width;
+
+        return (
+          <rect 
+            x={x + width / 2 - w / 2} 
+            y={y} 
+            width={w} 
+            height={height} 
+            // rx={Math.min(w, height) / 6} 
+            fill={color}
+          
+            />
+        );
+      };
+
+      // Required to override default colors in the nivobar
+      const colors = { 'nonfixed': '#8342e9'/*purple*/, 'fixed': '#fba9d3'/*pink*/, 'savings': '#febd30'/*orange*/ }
+      const getColor = bar => colors[bar.id]
+      
+
+
       const colorBy = ({ id }) => (id === "nonfixed" ? "#FBA9D3" : id === "fixed" ? "#8342E9" : "#FEBD30");
       
       const legends = [
@@ -118,9 +150,9 @@ const BarGraph = () => {
       ];
       
   return (
-    <div>
+    <div className='incomeexpenses'>
         <h5>Income / Expenses</h5>
-        <div style={styles}>
+        <div className="incomeexpenses_styles" style={styles}>
             <Bar
                 width={600}
                 height={400}
@@ -132,12 +164,18 @@ const BarGraph = () => {
                 labelSkipWidth={12}
                 labelSkipHeight={12}
                 enableGridX={false}
+                enableGridY={false}
                 axisBottom={axisBottom}
                 axisLeft={axisLeft}
                 colorBy={colorBy}
                 theme={theme}
                 legends={legends}
+                barComponent={CustomBarComponent} /* needed for individual bar properties */
+                colors={getColor} /*needed for bargraph color override*/
+                
             />
+            <div className='stroke'>
+                </div>
         </div>
     </div>
   );
