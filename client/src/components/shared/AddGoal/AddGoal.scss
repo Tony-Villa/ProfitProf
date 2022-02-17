@@ -1,6 +1,9 @@
 @use '../../../scss/' as *;
 
 .goal-form {
+  &__content {
+    z-index: 5;
+  }
   &__form {
     @include flex(column, center, center);
   }

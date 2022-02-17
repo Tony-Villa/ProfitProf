@@ -4,7 +4,7 @@ import { ReloadContext } from '../../../Context/ReloadContext';
 import { UserContext } from '../../../Context/UserContext';
 import './AddGoal.scss';
 
-const AddGoal = ({}) => {
+const AddGoal = ({ closeModal }) => {
   const { isReload, setIsReload } = useContext(ReloadContext);
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
@@ -50,84 +50,96 @@ const AddGoal = ({}) => {
 
   return (
     <div className="goal-form">
-      <form className="goal-form__form flex" onSubmit={onSubmitForm} autoComplete="off">
-        <input
-          className="input-form"
-          type="hidden"
-          name="user_id"
-          placeholder="user_id"
-          value={user_id}
-          onChange={(e) => onChange(e)}
-        />
-        <input
-          className="input-form"
-          type="hidden"
-          name="due_date"
-          placeholder="due_date"
-          value={due_date}
-          onChange={(e) => onChange(e)}
-        />
-        <input
-          className="input-form"
-          type="hidden"
-          name="goal_type"
-          placeholder="goal_type"
-          value={goal_type}
-          onChange={(e) => onChange(e)}
-        />
-        <input
-          className="input-form"
-          type="hidden"
-          name="goal_subtype"
-          placeholder="goal_subtype"
-          value={goal_subtype}
-          onChange={(e) => onChange(e)}
-        />
-        <select>
-          <option value="credit card payment">Pay Credit Card</option>
-          <option value="vacation">Vacation</option>
-          <option value="other goal">Other Goal</option>
-        </select>
-        <label for="total_amount">Amount Needed</label>
-        <input
-          className="input-form"
-          type="number"
-          name="total_amount"
-          placeholder="250"
-          value={total_amount}
-          onChange={(e) => onChange(e)}
-        />
-        <label for="monthly_cap">Monthly Contribution</label>
-        <input
-          className="input-form"
-          type="number"
-          name="monthly_cap"
-          placeholder="250"
-          value={monthly_cap}
-          onChange={(e) => onChange(e)}
-        />
-        <label for="monthly_cap">Initial Investment</label>
-        <input
-          className="input-form"
-          type="number"
-          name="current_amount"
-          placeholder="current_amount"
-          value={current_amount}
-          onChange={(e) => onChange(e)}
-        />
+      <div className="goal-form__content ">
+        <button
+          className="modal__close-btn"
+          onClick={() => {
+            closeModal(false);
+          }}
+        >
+          X
+        </button>
+        <form className="goal-form__form flex" onSubmit={onSubmitForm} autoComplete="off">
+          <div className="goal-form__left"></div>
+          <div className="goal-form__right"></div>
+          <input
+            className="input-form"
+            type="hidden"
+            name="user_id"
+            placeholder="user_id"
+            value={user_id}
+            onChange={(e) => onChange(e)}
+          />
+          <input
+            className="input-form"
+            type="hidden"
+            name="due_date"
+            placeholder="due_date"
+            value={due_date}
+            onChange={(e) => onChange(e)}
+          />
+          <input
+            className="input-form"
+            type="hidden"
+            name="goal_type"
+            placeholder="goal_type"
+            value={goal_type}
+            onChange={(e) => onChange(e)}
+          />
+          <input
+            className="input-form"
+            type="hidden"
+            name="goal_subtype"
+            placeholder="goal_subtype"
+            value={goal_subtype}
+            onChange={(e) => onChange(e)}
+          />
+          <select>
+            <option value="credit card payment">Pay Credit Card</option>
+            <option value="vacation">Vacation</option>
+            <option value="other goal">Other Goal</option>
+          </select>
+          <label for="total_amount">Amount Needed</label>
+          <input
+            className="input-form"
+            type="number"
+            name="total_amount"
+            placeholder="250"
+            value={total_amount}
+            onChange={(e) => onChange(e)}
+          />
+          <label for="monthly_cap">Monthly Contribution</label>
+          <input
+            className="input-form"
+            type="number"
+            name="monthly_cap"
+            placeholder="250"
+            value={monthly_cap}
+            onChange={(e) => onChange(e)}
+          />
+          <label for="monthly_cap">Initial Investment</label>
+          <input
+            className="input-form"
+            type="number"
+            name="current_amount"
+            placeholder="current_amount"
+            value={current_amount}
+            onChange={(e) => onChange(e)}
+          />
 
-        <label for="monthly_cap">Goal Title</label>
-        <input
-          className="input-form"
-          type="text"
-          name="description"
-          placeholder="Buy new shoes"
-          value={description}
-          onChange={(e) => onChange(e)}
-        />
+          <label for="monthly_cap">Goal Title</label>
+          <input
+            className="input-form"
+            type="text"
+            name="description"
+            placeholder="Buy new shoes"
+            value={description}
+            onChange={(e) => onChange(e)}
+          />
 
-        <button className="btn submit btn-search mt-1 mb-1">Submit</button>
-      </form>
+          <button className="btn submit btn-search mt-1 mb-1">Submit</button>
+        </form>
+      </div>
     </div>
   );
 };
