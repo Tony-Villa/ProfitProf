@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { UserContext } from '../../../Context/UserContext';
+import '../AuthForm/Auth.scss';
 
 const Login = ({ setAuth }) => {
   const navigate = useNavigate();
@@ -44,11 +45,11 @@ const Login = ({ setAuth }) => {
   };
 
   return (
-    <div className='login_div'>
-      <div className='login_header'>
-        <h3>Login</h3>
+    <div className="login_div">
+      <div className="login_header">
+        <h3>Sign In</h3>
       </div>
-      
+
       <form className="login_form" onSubmit={onSubmitForm} autoComplete="off">
         <input
           className="input-auth"
@@ -69,8 +70,12 @@ const Login = ({ setAuth }) => {
           onChange={(e) => onChange(e)}
         />
 
-        <button className="btn-yellow login__submit" id="login_submit">Submit</button>
-        <h7>By choosing an account, you agree to our Terms and have read and acknowledge our Global Privacy Statement.</h7>
+        <button className="btn-yellow login__submit" id="login_submit">
+          Sign In
+        </button>
+        <h7>
+          By choosing an account, you agree to our Terms and have read and acknowledge our Global Privacy Statement.
+        </h7>
       </form>
     </div>
   );
