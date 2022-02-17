@@ -7,15 +7,15 @@ const AuthForm = ({ setAuth }) => {
   const [login, setLogin] = useState(false);
 
   return (
+    /*
+    {login ? (
+      <button onClick={() => setLogin(!login)}>Sign In!</button>
+    ) : (
+      <button onClick={() => setLogin(!login)}>Register!</button>
+    )}
+    */
     <div className='authform'>
       {login ? <Register setAuth={setAuth} /> : <Login setAuth={setAuth} />}
-
-      {login ? (
-        <button onClick={() => setLogin(!login)}>Log In!</button>
-      ) : (
-        <button onClick={() => setLogin(!login)}>Register!</button>
-      )}
-
         
     </div>
   );
