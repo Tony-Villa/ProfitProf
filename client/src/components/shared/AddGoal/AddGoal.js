@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { useNavigate } from 'react-router';
 import { ReloadContext } from '../../../Context/ReloadContext';
 import { UserContext } from '../../../Context/UserContext';
 import './AddGoal.scss';
@@ -6,6 +7,7 @@ import './AddGoal.scss';
 const AddGoal = ({}) => {
   const { isReload, setIsReload } = useContext(ReloadContext);
   const { user } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
     user_id: user.id,
@@ -13,7 +15,7 @@ const AddGoal = ({}) => {
     goal_subtype: 'other goal',
     description: '',
     total_amount: 4000,
-    monthly_cap: 250,
+    monthly_cap: 500,
     current_amount: 250,
     due_date: '2022-09-25',
   });
@@ -38,6 +40,7 @@ const AddGoal = ({}) => {
       const parsedRes = await res.json();
 
       setIsReload(!isReload);
+      navigate('/dashboard');
 
       //   handleClose();
     } catch (err) {
@@ -54,14 +57,6 @@ const AddGoal = ({}) => {
           name="user_id"
           placeholder="user_id"
           value={user_id}
-          onChange={(e) => onChange(e)}
-        />
-        <input
-          className="input-form"
-          type="hidden"
-          name="current_amount"
-          placeholder="current_amount"
-          value={current_amount}
           onChange={(e) => onChange(e)}
         />
         <input
@@ -93,22 +88,35 @@ const AddGoal = ({}) => {
           <option value="vacation">Vacation</option>
           <option value="other goal">Other Goal</option>
         </select>
+        <label for="total_amount">Amount Needed</label>
         <input
           className="input-form"
-          type="text"
-          name="toal_amount"
-          placeholder="4000"
+          type="number"
+          name="total_amount"
+          placeholder="250"
           value={total_amount}
           onChange={(e) => onChange(e)}
         />
+        <label for="monthly_cap">Monthly Contribution</label>
         <input
           className="input-form"
-          type="text"
+          type="number"
           name="monthly_cap"
           placeholder="250"
           value={monthly_cap}
           onChange={(e) => onChange(e)}
         />
+        <label for="monthly_cap">Initial Investment</label>
+        <input
+          className="input-form"
+          type="number"
+          name="current_amount"
+          placeholder="current_amount"
+          value={current_amount}
+          onChange={(e) => onChange(e)}
+        />
+
+        <label for="monthly_cap">Goal Title</label>
         <input
           className="input-form"
           type="text"
