@@ -2,12 +2,13 @@ import AuthForm from './components/auth/AuthForm/AuthForm';
 import { UserContext } from './Context/UserContext';
 import { useEffect, useMemo, useState } from 'react';
 import AppRoutes from './routes/config/Routes';
-import SplashNav from './components/layout/SplashNav/SplashNav';
+import { ReloadContext } from './Context/ReloadContext';
 import './app.scss';
 
 function App() {
   const [isUser, setIsUser] = useState(false);
   const [user, setUser] = useState(null);
+  const [isReload, setIsReload] = useState(false);
 
   const value = useMemo(() => ({ user, setUser }), [user, setUser]);
 
@@ -58,7 +59,9 @@ function App() {
   return (
     <div className="App">
       <UserContext.Provider value={value}>
-        <AppRoutes setAuth={setAuth} isUser={isUser} />
+        <ReloadContext.Provider value={{ isReload, setIsReload }}>
+          <AppRoutes setAuth={setAuth} isUser={isUser} />
+        </ReloadContext.Provider>
       </UserContext.Provider>
     </div>
   );
