@@ -7,7 +7,7 @@ import Loan from '../../../assets/thumbnails/loan.png';
 const GoalCard = ({ goal_subtype, description, current_amount, total_amount, monthly_cap }) => {
   const thumbnailPicker = {
     vacation: Hawaii,
-    'loan repayment': Loan,
+    'loan payment': Loan,
     'car purchase': Car,
   };
 

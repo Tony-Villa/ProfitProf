@@ -9,7 +9,7 @@ const AppRoutes = ({ isUser, setAuth }) => {
     <Routes>
       <Route index exact path="/" element={<Home setAuth={setAuth} isUser={isUser} />} />
       <Route path="/dashboard" element={<Dashboard setAuth={setAuth} />} />
-      <Route path="/goals" element={<Goals />} />
+      <Route path="/goals" element={<Goals setAuth={setAuth} />} />
     </Routes>
   );
 };

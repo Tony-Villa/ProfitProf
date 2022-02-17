@@ -76,7 +76,7 @@ const Dashboard = ({ setAuth }) => {
   return (
     <div className="dashboard flex">
       <div className="dashboard__nav mr-2">
-        <DashNav logout={logout} />
+        <DashNav logout={logout} income={income} goals={goals} data={expenses} />
       </div>
 
       <div className="dashboard__summary grid mt-1 mb-1">
@@ -87,7 +87,7 @@ const Dashboard = ({ setAuth }) => {
           <GoalsSummary goals={goals} />
         </div>
         <div className="dashboard__expenses">
-          <PieChart data={expenses}/>
+          <PieChart data={expenses} />
         </div>
         <div className="dashboard__barGraph">
           <p>this is for bargraph</p>
