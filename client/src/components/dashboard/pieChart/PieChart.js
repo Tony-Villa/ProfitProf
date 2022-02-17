@@ -13,7 +13,7 @@ const PieChart = (props) => {
       fontFamily: 'consolas, sans-serif',
       textAlign: 'center',
       position: 'relative',
-      width: 300,
+      width: 400,
       height: 300,
     },
     overlay: {
@@ -115,8 +115,9 @@ const PieChart = (props) => {
           innerRadius={0.5}
           enableRadialLabels={false}
           enableSlicesLabels={false}
-          theme={theme}
+          colors={['#8342e9', '#febd30']}
           legends={legends}
+          enableArcLinkLabels={false}
         />
       </div>
     </div>
