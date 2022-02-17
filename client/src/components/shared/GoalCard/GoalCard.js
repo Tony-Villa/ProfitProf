@@ -52,12 +52,15 @@ const GoalCard = ({ goal_subtype, description, current_amount, total_amount, mon
           <div className="goal-card__months-left">
             {current_amount < total_amount ? <p>{randomNumber} months to go!</p> : <p></p>}
           </div>
-          <div className="goal-card__on-track">
-            {current_amount < total_amount ? (
-              <span className="subtitle">On Schedule</span>
-            ) : (
-              <span className="subtitle">Achieved Oct 2021</span>
-            )}
+          <div className="goal-card__options flex">
+            <div className="goal-card__on-track">
+              {current_amount < total_amount ? (
+                <span className="subtitle">On Schedule</span>
+              ) : (
+                <span className="subtitle">Achieved Oct 2021</span>
+              )}
+            </div>
+            <button>trash</button>
           </div>
         </div>
       </div>
