@@ -55,7 +55,7 @@ const Goals = ({ setAuth }) => {
 
   return (
     <div className="goals flex">
-      <div className="dashboard__nav mr-2">
+      <div className="dashboard__nav ">
         <DashNav logout={logout} />
       </div>
       <div className="goals__content flex">
