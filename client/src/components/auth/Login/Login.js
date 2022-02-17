@@ -70,7 +70,7 @@ const Login = ({ setAuth }) => {
         />
 
         <button className="btn-yellow login__submit" id="login_submit">Submit</button>
-        <h6>By choosing an account, you agree to our Terms and have read and acknowledge our Global Privacy Statement.</h6>
+        <h7>By choosing an account, you agree to our Terms and have read and acknowledge our Global Privacy Statement.</h7>
       </form>
     </div>
   );
