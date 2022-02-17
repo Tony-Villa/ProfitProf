@@ -9,7 +9,7 @@ const SavingsSummary = ({ income }) => {
   return (
     <div className="save-sum ">
       <h5 classNames="save-sum__greeting text-bold">Hi, {user.first_name}</h5>
-      <p className="mt-2">Your Current Savings</p>
+      <p className="mt-1">Your Current Savings</p>
       {income[0]?.total_saved && (
         <h3 className="save-sum__amount">${(Math.round(income[0].total_saved * 100) / 100).toLocaleString()}</h3>
       )}

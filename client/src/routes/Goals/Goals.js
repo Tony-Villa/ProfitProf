@@ -60,7 +60,7 @@ const Goals = ({ setAuth }) => {
       </div>
       <div className="goals__content flex">
         <div className="goals__top goals__container">
-          <h3>Welcome to goals y'all</h3>
+          <h4>Current</h4>
           <div className="flex">
             <div className="goals-sum__new-goal flex">
               <div className="goals-sum__goal-add">
@@ -84,7 +84,7 @@ const Goals = ({ setAuth }) => {
           </div>
         </div>
         <div className="goals__bottom goals__container">
-          <h3>Welcome to goals y'all</h3>
+          <h4>Achieved</h4>
           <div className="goals-sum__cards-container flex">
             {goals.length ? genCompleteGoalCards(goals) : <h4>loading...</h4>}
           </div>

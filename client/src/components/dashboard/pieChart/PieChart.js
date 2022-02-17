@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { ResponsivePie } from '@nivo/pie';
+import './PieChart.scss';
 
 const PieChart = (props) => {
   const [chartData, setChartData] = useState([]);
 
   //==========================
-  const margin = { top: 20, right: 150, bottom: 20, left: 20 };
+  const margin = { top: 20, right: 150, bottom: 20, left: 50 };
 
   const styles = {
     root: {
       fontFamily: 'consolas, sans-serif',
       textAlign: 'center',
       position: 'relative',
-      width: 300,
-      height: 300,
+      width: 400,
+      height: 250,
     },
     overlay: {
       position: 'absolute',
@@ -105,17 +106,18 @@ const PieChart = (props) => {
   }, [props]);
 
   return (
-    <div>
+    <div className="pie-chart">
       <h5>Fixed Expenses</h5>
-      <div style={styles.root}>
+      <div className="pie-chart__chart" style={styles.root}>
         <ResponsivePie
           margin={margin}
           data={chartData}
           innerRadius={0.5}
           enableRadialLabels={false}
           enableSlicesLabels={false}
-          theme={theme}
+          colors={['#8342e9', '#febd30']}
           legends={legends}
+          enableArcLinkLabels={false}
         />
       </div>
     </div>
