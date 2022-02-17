@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ResponsivePie } from "@nivo/pie";
+import { ResponsivePie } from '@nivo/pie';
 
 const PieChart = (props) => {
   const [chartData, setChartData] = useState([]);
@@ -75,7 +75,7 @@ const PieChart = (props) => {
       itemDirection: 'left-to-right',
       itemOpacity: 0.85,
 
-      itemTextColor: "#black",
+      itemTextColor: '#black',
 
       symbolSize: 20,
       effects: [
@@ -90,25 +90,25 @@ const PieChart = (props) => {
   ];
 
   useEffect(() => {
-    if(props.data[0]?.value > 0){
+    if (props.data[0]?.value > 0) {
       const data = props.data.map((data) => {
         const container = {};
-  
+
         container.id = data.expense_subtype;
         container.label = data.expense_subtype;
         container.value = data.value;
-        
+
         return container;
       });
       setChartData(data);
     }
-  }, [props])
+  }, [props]);
 
   return (
     <div>
       <h5>Fixed Expenses</h5>
       <div style={styles.root}>
-        <ResponsivePie 
+        <ResponsivePie
           margin={margin}
           data={chartData}
           innerRadius={0.5}

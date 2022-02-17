@@ -25,6 +25,7 @@
     grid-area: two;
     background-color: rgba(66, 31, 121, 0.05);
     border-radius: get-spacing(4);
+    overflow-y: auto;
   }
   &__expenses {
     grid-area: three;
