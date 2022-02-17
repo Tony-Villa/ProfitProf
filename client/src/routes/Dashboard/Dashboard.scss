@@ -18,22 +18,22 @@
 
   &__savings {
     grid-area: one;
-    background-color: pink;
+    background-color: rgba(66, 31, 121, 0.05);
     border-radius: get-spacing(4);
   }
   &__goals {
     grid-area: two;
-    background-color: blue;
+    background-color: rgba(66, 31, 121, 0.05);
     border-radius: get-spacing(4);
   }
   &__expenses {
     grid-area: three;
-    background-color: red;
+    background-color: rgba(66, 31, 121, 0.05);
     border-radius: get-spacing(4);
   }
   &__barGraph {
     grid-area: four;
-    background-color: lightyellow;
+    background-color: rgba(66, 31, 121, 0.05);
     border-radius: get-spacing(4);
   }
 }
