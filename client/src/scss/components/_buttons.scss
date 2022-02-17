@@ -1,6 +1,10 @@
 @use '../abstracts/' as *;
 @use '../base/' as *;
 
+.btn {
+  font-size: 0.75rem;
+}
+
 .btn-yellow {
   background-color: $yellow;
   height: 50px;
@@ -9,7 +13,6 @@
   border: none;
   cursor: pointer;
 }
-
 
 .btn-generic {
   background-color: $grey;
