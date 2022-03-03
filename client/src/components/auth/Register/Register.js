@@ -46,40 +46,48 @@ const Register = ({ setAuth }) => {
         <h3>Register</h3>
       </div>
 
-      <form className="login_form" onSubmit={onSubmitForm} autoComplete="off">
+      <form className="register_form" onSubmit={onSubmitForm} autoComplete="off">
+        <label htmlFor="register_email" className="content-1 ">
+          Email
+        </label>
         <input
           className="input-auth"
-          id="login_email"
+          id="register_email"
           type="email"
           name="email"
-          placeholder="email"
           value={email}
           onChange={(e) => onChange(e)}
         />
+        <label htmlFor="register_username" className="content-1 ">
+          Username
+        </label>
         <input
           className="input-auth"
-          id="login_username"
+          id="register_username"
           type="text"
           name="username"
-          placeholder="username"
           value={username}
           onChange={(e) => onChange(e)}
         />
+        <label htmlFor="register_firstname" className="content-1 ">
+          First Name
+        </label>
         <input
           className="input-auth"
-          id="login_firstname"
+          id="register_firstname"
           type="text"
           name="first_name"
-          placeholder="First Name"
           value={first_name}
           onChange={(e) => onChange(e)}
         />
+        <label htmlFor="register_password" className="content-1 ">
+          Password
+        </label>
         <input
           className="input-auth"
-          id="login_password"
+          id="register_password"
           type="password"
           name="password"
-          placeholder="password"
           value={password}
           onChange={(e) => onChange(e)}
         />

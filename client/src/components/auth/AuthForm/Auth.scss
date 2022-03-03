@@ -17,7 +17,7 @@
 
   &__switch {
     // border: 1px solid black;
-    margin: 2rem auto;
+    margin: 5rem auto;
   }
 
   &__switch-btn {
@@ -58,11 +58,33 @@
       // flex-wrap: wrap;
 
       .input-auth {
-        height: 40px;
+        height: 3rem;
         text-align: center;
         margin: 0 0 2rem 0;
-        padding: 0 0 0 0;
+        padding: 0.5rem;
         border: solid 1px $gray2;
+        text-align: left;
+      }
+    }
+
+    .register_form {
+      // background-color: darkorange;
+      margin: -2.5rem auto;
+      // padding-top: 50px;
+      width: 70%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      // top: 50px;
+      // flex-wrap: wrap;
+
+      .input-auth {
+        height: 3rem;
+        text-align: center;
+        margin: 0 0 1rem 0;
+        padding: 0.5rem;
+        border: solid 1px $gray2;
+        text-align: left;
       }
     }
   }
