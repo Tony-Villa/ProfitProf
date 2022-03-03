@@ -51,21 +51,25 @@ const Login = ({ setAuth }) => {
       </div>
 
       <form className="login_form" onSubmit={onSubmitForm} autoComplete="off">
+        <label htmlFor="login_username" className="content-1 mb-half">
+          Username
+        </label>
         <input
           className="input-auth"
           id="login_username"
           type="text"
           name="username"
-          placeholder="username"
           value={username}
           onChange={(e) => onChange(e)}
         />
+        <label htmlFor="login_password" className="content-1 mb-half">
+          Password
+        </label>
         <input
           className="input-auth"
           id="login_password"
           type="password"
           name="password"
-          placeholder="password"
           value={password}
           onChange={(e) => onChange(e)}
         />
@@ -73,9 +77,11 @@ const Login = ({ setAuth }) => {
         <button className="btn-yellow login__submit" id="login_submit">
           Sign In
         </button>
-        <h7>
-          By choosing an account, you agree to our Terms and have read and acknowledge our Global Privacy Statement.
-        </h7>
+        <div>
+          <p>
+            By choosing an account, you agree to our Terms and have read and acknowledge our Global Privacy Statement.
+          </p>
+        </div>
       </form>
     </div>
   );

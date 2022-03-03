@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router';
+import '../AuthForm/Auth.scss';
 
 const Register = ({ setAuth }) => {
+  const navigate = useNavigate();
+
   const [inputs, setInputs] = useState({
     email: '',
     username: '',
@@ -30,27 +34,27 @@ const Register = ({ setAuth }) => {
 
       localStorage.setItem('token', parsedRes.token);
       setAuth(true);
+      navigate(`/dashboard`);
     } catch (err) {
       console.log(err.message);
     }
   };
 
   return (
-    <div className='login_div'>
-      <div className='login_header'>
+    <div className="login_div">
+      <div className="login_header">
         <h3>Register</h3>
       </div>
-      
 
       <form className="login_form" onSubmit={onSubmitForm} autoComplete="off">
-        <input 
-        className="input-auth"
-        id="login_email"
-        type="email" 
-        name="email" 
-        placeholder="email" 
-        value={email} 
-        onChange={(e) => onChange(e)} 
+        <input
+          className="input-auth"
+          id="login_email"
+          type="email"
+          name="email"
+          placeholder="email"
+          value={email}
+          onChange={(e) => onChange(e)}
         />
         <input
           className="input-auth"
@@ -80,8 +84,14 @@ const Register = ({ setAuth }) => {
           onChange={(e) => onChange(e)}
         />
 
-        <button className="mt-1 btn-search submit" id="login_signup">Sign Up</button>
-        <h6>By choosing an account, you agree to our Terms and have read and acknowledge our Global Privacy Statement.</h6>
+        <button className="btn-yellow login__submit" id="login_signup">
+          Sign Up
+        </button>
+        <div>
+          <p>
+            By choosing an account, you agree to our Terms and have read and acknowledge our Global Privacy Statement.
+          </p>
+        </div>
       </form>
     </div>
   );
