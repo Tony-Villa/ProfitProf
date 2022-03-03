@@ -5,7 +5,7 @@
   margin: 0 auto;
   width: 33rem;
   // width: 95%;
-  // height: 95%;
+  height: 44.5rem;
   border-radius: 20px;
   // border: 1px black solid;
   display: flex;
@@ -15,13 +15,25 @@
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   background-color: rgba(245, 245, 245, 0.85);
 
+  &__switch {
+    // border: 1px solid black;
+    margin: 5rem auto;
+  }
+
+  &__switch-btn {
+    color: blue;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
   .login_div {
     // background-color: green;
-    margin: 0 auto 0 auto;
     width: 80%;
-    // height: 100%;
+    height: 80%;
     display: flex;
     flex-wrap: wrap;
+    margin: 0 auto;
+    // border: 1px solid black;
 
     .login_header {
       // background-color: red;
@@ -30,7 +42,7 @@
       padding: 0 0 20% 0;
       h3 {
         text-align: center;
-        font-size: 24px;
+        font-size: 34px;
       }
     }
 
@@ -46,27 +58,33 @@
       // flex-wrap: wrap;
 
       .input-auth {
-        height: 40px;
+        height: 3rem;
         text-align: center;
-        margin: 0 0 50px 0;
-        padding: 0 0 0 0;
+        margin: 0 0 2rem 0;
+        padding: 0.5rem;
         border: solid 1px $gray2;
+        text-align: left;
       }
+    }
 
-      #login_email,
-      #login_username,
-      #login_firstname {
-        // margin-top: 100px;
-        // background-color: aqua;
-      }
-      #login_password {
-        // background-color: aquamarine;
-      }
+    .register_form {
+      // background-color: darkorange;
+      margin: -2.5rem auto;
+      // padding-top: 50px;
+      width: 70%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      // top: 50px;
+      // flex-wrap: wrap;
 
-      h7 {
+      .input-auth {
+        height: 3rem;
         text-align: center;
-        padding: 10px 0 135px 0;
-        // border: 1px solid black;
+        margin: 0 0 1rem 0;
+        padding: 0.5rem;
+        border: solid 1px $gray2;
+        text-align: left;
       }
     }
   }
