@@ -2,9 +2,8 @@ import React, { useContext } from 'react';
 import AuthForm from '../../components/auth/AuthForm/AuthForm';
 import { UserContext } from '../../Context/UserContext';
 import { Link } from 'react-router-dom';
-import "./Home.scss"
-import logo from "../../assets/logo.png";
-import bgimage from "../../assets/background.png";
+import './Home.scss';
+import logo from '../../assets/logo.png';
 
 const Home = ({ isUser, setAuth }) => {
   const { user } = useContext(UserContext);
@@ -13,10 +12,9 @@ const Home = ({ isUser, setAuth }) => {
   console.log(isUser);
   return (
     <div className="splash">
-    
       <div className="splash_title_div">
         <div className="splash_title">
-          <img src={logo} ></img>
+          <img src={logo}></img>
         </div>
 
         <div className="splash_nav">
