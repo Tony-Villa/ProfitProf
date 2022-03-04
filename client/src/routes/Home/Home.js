@@ -18,13 +18,13 @@ const Home = ({ isUser, setAuth }) => {
         </div>
 
         <div className="splash_nav">
-          <Link to="howitworks" className="splah_nav_link">
+          <Link to="/" className="splah_nav_link">
             <h6>How It Works</h6>
           </Link>
-          <Link to="pricing" className="splah_nav_link">
+          <Link to="/" className="splah_nav_link">
             <h6>Pricing</h6>
           </Link>
-          <Link to="resources" className="splah_nav_link">
+          <Link to="/" className="splah_nav_link">
             <h6>Resources</h6>
           </Link>
         </div>
