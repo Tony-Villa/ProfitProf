@@ -15,12 +15,12 @@ const GoalsSummary = ({ goals }) => {
       </div>
       <div className="goals-sum__cards-container flex">
         {goals.length ? genGoalCards(goals) : <h4>loading...</h4>}
-        <div className="goals-sum__new-goal flex">
+        {/* <div className="goals-sum__new-goal flex">
           <div className="goals-sum__goal-add">
             <h6>Add New Goal</h6>
             <img src={plus} alt="" />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
